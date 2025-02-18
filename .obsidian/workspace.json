@@ -181,6 +181,11 @@
   },
   "active": "e93759a09a56d350",
   "lastOpenFiles": [
+    "Template/hexo-post-init.js",
+    "Template/hexo-categories-init.js",
+    "Template",
+    "Scripts/hash_8c_2.js",
+    "Scripts",
     "Pasted image 20250218105201.png",
     "obsidian/Obsidian同步Hexo部署.md",
     "obsidian/Obsidian同步Hexo部署/file-20250218105514089.png",
@@ -199,12 +204,8 @@
     "JAVA/SPRING/image/Pasted image 20250218104112.png",
     "JAVA/SPRING/image/Pasted image 20250218092353.png",
     "JAVA/SPRING/image/Pasted image 20250218091616.png",
-    "JAVA/SPRING/image",
     "第四次提交删除/第四次提交删除.md",
-    "JAVA/SPRING",
-    "JAVA",
     "第三次提交删除/第三次提交.md",
-    "第四次提交删除",
     "第二次提交测试/第二次提交测试.md",
     "测试文件夹/测试git hooks.md"
   ]
