@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "第二次提交测试/第二次提交测试.md",
+                "file": "第三次提交删除/第三次提交.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "第二次提交测试"
+              "title": "第三次提交"
             }
           }
         ]
@@ -179,10 +179,12 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "979c75c95ff71d51",
+  "active": "c90779512ddad35e",
   "lastOpenFiles": [
-    "测试文件夹/测试git hooks.md",
     "第二次提交测试/第二次提交测试.md",
+    "第三次提交删除/第三次提交.md",
+    "第三次提交删除",
+    "测试文件夹/测试git hooks.md",
     "第二次提交测试",
     "测试文件夹",
     "README.md"
