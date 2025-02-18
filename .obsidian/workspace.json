@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "第三次提交删除/第三次提交.md",
+                "file": "第四次提交删除/第四次提交删除.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "第三次提交"
+              "title": "第四次提交删除"
             }
           }
         ]
@@ -181,8 +181,10 @@
   },
   "active": "c90779512ddad35e",
   "lastOpenFiles": [
-    "第二次提交测试/第二次提交测试.md",
     "第三次提交删除/第三次提交.md",
+    "第四次提交删除/第四次提交删除.md",
+    "第四次提交删除",
+    "第二次提交测试/第二次提交测试.md",
     "第三次提交删除",
     "测试文件夹/测试git hooks.md",
     "第二次提交测试",
