@@ -176,11 +176,13 @@
       "daily-notes:打开/创建今天的日记": false,
       "templates:插入模板": false,
       "command-palette:打开命令面板": false,
-      "obsidian-git:Open Git source control": false
+      "obsidian-git:Open Git source control": false,
+      "templater-obsidian:Templater": false
     }
   },
   "active": "e93759a09a56d350",
   "lastOpenFiles": [
+    "obsidian/Obsidian同步Hexo部署/file-20250218110249059.png",
     "Template/hexo-post-init.js",
     "Template/hexo-categories-init.js",
     "Template",
@@ -199,7 +201,6 @@
     "JAVA/SPRING/image/Pasted image 20250218104550.png",
     "Pasted image 20250218104244.png",
     "README.md",
-    "JAVA/SPRING",
     "JAVA/SPRING/image/Pasted image 20250218092614.png",
     "JAVA/SPRING/image/Pasted image 20250218104112.png",
     "JAVA/SPRING/image/Pasted image 20250218092353.png",

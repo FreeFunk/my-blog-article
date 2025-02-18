@@ -18,6 +18,6 @@ thumbnail: false
 ---
 测试内容
 
+![](Obsidian同步Hexo部署/file-20250218110249059.png)
 
-![[Obsidian同步Hexo部署/file-20250218105514089.png]]
 
