@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "JAVA/SPRING/SPRING.md",
+                "file": "JAVA/未命名/测试.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "SPRING"
+              "title": "测试"
             }
           }
         ]
@@ -179,10 +179,13 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "979c75c95ff71d51",
+  "active": "c90779512ddad35e",
   "lastOpenFiles": [
-    "JAVA/SPRING/image/Pasted image 20250218092614.png",
+    "README.md",
+    "JAVA/未命名/测试.md",
     "JAVA/SPRING/SPRING.md",
+    "JAVA/未命名",
+    "JAVA/SPRING/image/Pasted image 20250218092614.png",
     "JAVA/SPRING/image/Pasted image 20250218104112.png",
     "JAVA/SPRING/image/Pasted image 20250218092353.png",
     "JAVA/SPRING/image/Pasted image 20250218091616.png",
@@ -196,7 +199,6 @@
     "第三次提交删除",
     "测试文件夹/测试git hooks.md",
     "第二次提交测试",
-    "测试文件夹",
-    "README.md"
+    "测试文件夹"
   ]
 }
