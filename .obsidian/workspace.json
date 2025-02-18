@@ -4,17 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "255242b2044e691a",
+        "id": "e62b4391907b8b67",
         "type": "tabs",
         "children": [
           {
-            "id": "c90779512ddad35e",
+            "id": "e93759a09a56d350",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "obsidian/Obsidian同步Hexo部署.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "新标签页"
+              "title": "Obsidian同步Hexo部署"
             }
           }
         ]
@@ -175,8 +179,16 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "c90779512ddad35e",
+  "active": "e93759a09a56d350",
   "lastOpenFiles": [
+    "Pasted image 20250218105201.png",
+    "obsidian/Obsidian同步Hexo部署.md",
+    "obsidian/Obsidian同步Hexo部署/file-20250218105514089.png",
+    "obsidian/Obsidian同步Hexo部署",
+    "image/Pasted.md",
+    "image",
+    "obsidian/image",
+    "obsidian",
     "JAVA/SPRING/SPRING.md",
     "JAVA/SPRING/image",
     "JAVA/SPRING/image/Pasted image 20250218104550.png",
@@ -194,9 +206,6 @@
     "第三次提交删除/第三次提交.md",
     "第四次提交删除",
     "第二次提交测试/第二次提交测试.md",
-    "第三次提交删除",
-    "测试文件夹/测试git hooks.md",
-    "第二次提交测试",
-    "测试文件夹"
+    "测试文件夹/测试git hooks.md"
   ]
 }
