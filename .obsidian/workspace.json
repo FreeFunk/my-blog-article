@@ -11,14 +11,10 @@
             "id": "c90779512ddad35e",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "JAVA/SPRING/SPRING.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "SPRING"
+              "title": "新标签页"
             }
           }
         ]
@@ -179,14 +175,13 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "979c75c95ff71d51",
+  "active": "c90779512ddad35e",
   "lastOpenFiles": [
+    "JAVA/SPRING/SPRING.md",
     "JAVA/SPRING/image",
     "JAVA/SPRING/image/Pasted image 20250218104550.png",
     "Pasted image 20250218104244.png",
-    "JAVA/SPRING/SPRING.md",
     "README.md",
-    "JAVA/SPRING/SPRING.md",
     "JAVA/SPRING",
     "JAVA/SPRING/image/Pasted image 20250218092614.png",
     "JAVA/SPRING/image/Pasted image 20250218104112.png",
