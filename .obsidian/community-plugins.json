@@ -1,5 +1,8 @@
 [
   "obsidian-git",
   "obsidian-custom-attachment-location",
-  "templater-obsidian"
+  "templater-obsidian",
+  "editor-width-slider",
+  "dataview",
+  "editing-toolbar"
 ]

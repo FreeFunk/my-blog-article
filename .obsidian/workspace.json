@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "e62b4391907b8b67",
+        "id": "879c0ca02b19f822",
         "type": "tabs",
         "children": [
           {
-            "id": "e93759a09a56d350",
+            "id": "b393307ceceb019f",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "obsidian/Obsidian同步Hexo部署.md",
+                "file": "技术/搭建免费的个人博客网站.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Obsidian同步Hexo部署"
+              "title": "搭建免费的个人博客网站"
             }
           }
         ]
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "第二次提交测试/第二次提交测试.md",
+                "file": "技术/搭建免费的个人博客网站.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "第二次提交测试 的出链列表"
+              "title": "搭建免费的个人博客网站 的出链列表"
             }
           },
           {
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "第二次提交测试/第二次提交测试.md",
+                "file": "技术/搭建免费的个人博客网站.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "第二次提交测试 的大纲"
+              "title": "搭建免费的个人博客网站 的大纲"
             }
           },
           {
@@ -180,31 +180,38 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "e93759a09a56d350",
+  "active": "5e778d55b496e0cc",
   "lastOpenFiles": [
-    "obsidian/Obsidian同步Hexo部署/file-20250218110249059.png",
+    "技术/搭建免费的个人博客网站/file-20250308205058572.png",
+    "技术/搭建免费的个人博客网站/file-20250308204847773.png",
+    "技术/搭建免费的个人博客网站/file-20250308204439478.png",
+    "技术/搭建免费的个人博客网站/file-20250308203840249.png",
+    "技术/搭建免费的个人博客网站/file-20250308203656468.png",
+    "技术/搭建免费的个人博客网站/file-20250308203453174.png",
+    "技术/搭建免费的个人博客网站/file-20250308203411087.png",
+    "技术/搭建免费的个人博客网站/file-20250308203344872.png",
+    "技术/搭建免费的个人博客网站/file-20250308203232844.png",
+    "技术/搭建免费的个人博客网站/file-20250308203218317.png",
+    "技术/搭建免费的个人博客网站/file-20250308203138296.png",
+    "技术/搭建免费的个人博客网站.md",
+    "技术/nic.ua.md",
+    "技术/nic,ua.md",
+    "技术/center.md",
+    "技术/搭建免费的个人博客网站",
+    "未命名.canvas",
+    "obsidian/Obsidian同步Hexo部署.md",
+    "随笔",
+    "设计",
+    "技术",
     "Template/hexo-post-init.js",
     "Template/hexo-categories-init.js",
     "Template",
     "Scripts/hash_8c_2.js",
     "Scripts",
-    "Pasted image 20250218105201.png",
-    "obsidian/Obsidian同步Hexo部署.md",
-    "obsidian/Obsidian同步Hexo部署/file-20250218105514089.png",
     "obsidian/Obsidian同步Hexo部署",
     "image/Pasted.md",
-    "image",
-    "obsidian/image",
-    "obsidian",
     "JAVA/SPRING/SPRING.md",
-    "JAVA/SPRING/image",
-    "JAVA/SPRING/image/Pasted image 20250218104550.png",
-    "Pasted image 20250218104244.png",
     "README.md",
-    "JAVA/SPRING/image/Pasted image 20250218092614.png",
-    "JAVA/SPRING/image/Pasted image 20250218104112.png",
-    "JAVA/SPRING/image/Pasted image 20250218092353.png",
-    "JAVA/SPRING/image/Pasted image 20250218091616.png",
     "第四次提交删除/第四次提交删除.md",
     "第三次提交删除/第三次提交.md",
     "第二次提交测试/第二次提交测试.md",
