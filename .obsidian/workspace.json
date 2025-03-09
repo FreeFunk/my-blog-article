@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "879c0ca02b19f822",
+        "id": "0b8fa9983784b496",
         "type": "tabs",
         "children": [
           {
-            "id": "b393307ceceb019f",
+            "id": "3c4e931cedfcd152",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -180,8 +180,9 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "b393307ceceb019f",
+  "active": "3c4e931cedfcd152",
   "lastOpenFiles": [
+    "技术/搭建免费的个人博客网站.md",
     "技术/搭建免费的个人博客网站/file-20250308205058572.png",
     "技术/搭建免费的个人博客网站/file-20250308204847773.png",
     "技术/搭建免费的个人博客网站/file-20250308204439478.png",
@@ -192,8 +193,6 @@
     "技术/搭建免费的个人博客网站/file-20250308203344872.png",
     "技术/搭建免费的个人博客网站/file-20250308203232844.png",
     "技术/搭建免费的个人博客网站/file-20250308203218317.png",
-    "技术/搭建免费的个人博客网站/file-20250308203138296.png",
-    "技术/搭建免费的个人博客网站.md",
     "技术/nic.ua.md",
     "技术/nic,ua.md",
     "技术/center.md",
