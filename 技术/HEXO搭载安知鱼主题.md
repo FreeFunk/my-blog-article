@@ -140,10 +140,120 @@ thumbnail: false
 将你自己定义的css样式名字复制到`top.pug`做修改。替换掉前面在配置文件的key名前面的部分，pug文件的定义就是css样式名字=配置文件的key名。
 ![](HEXO搭载安知鱼主题/file-20250316180214906.png)
 {% endnote %}
+
+这部分涉及不同类型文章的入口页面
+![](HEXO搭载安知鱼主题/file-20250318210614692.png)
+
+追加完md文件之后配置`_config.anzhiyu.yml`，搜索`home_top`，修改`categories`
+![](HEXO搭载安知鱼主题/file-20250319153038375.png)
+三个按钮对应三份页面信息需要单独创建index.md文件，而且建议按照你命名的文字来定义目录，目录层级如下：
+![](HEXO搭载安知鱼主题/file-20250318210806908.png)
+追加如下信息，也可以根据你的喜好去修改，具体修改可以跳到[Front-matter](#front-matter)，检查具体配置。
+```yml
+---
+title: 技术 #按钮的名称
+date: 2025-02-14 23:18:49 #时间
+top_img: false #是否顶部背景使用图片，不一定生效
+type: categories #分类类型 默认：categories
+comments: false
+aside: false
+---
+```
+
+右侧的大图是一个图片查询点击跳转的功能
+![](HEXO搭载安知鱼主题/file-20250319154703919.png)
+文本、图片地址、跳转地址都在配置文件修改`_config.anzhiyu.yml`，搜索`home_top`，修改`banner`配置。`immage`是图片地址，`link`点击图片跳转的地址。
+![](HEXO搭载安知鱼主题/file-20250319154948047.png)
+
 ## 文章卡片
 
+文章的设置大部分在配置文件中调整，有一个涉及描述无法显示的bug，我在本地自己调整了需求修改`pug`文件。
+![](HEXO搭载安知鱼主题/file-20250319155515263.png)
+`_config.anzhiyu.yml`配置文件中搜索`default_cover`这个配置是文章卡片的默认封面。如果你的文章没有定义封面，默认从配置文件这里取。
+![](HEXO搭载安知鱼主题/file-20250319155656381.png)
+
+在同样配置文件下搜索`post_meta`，调整卡片的基本信息。
+![](HEXO搭载安知鱼主题/file-20250319160129067.png)
+
+{% note danger no-icon %}
+需求留一下，就是在初始化没做这块卡片样式修改，会发现你的文章定义的描述`description`，在卡片上不显示。默认配置是给定一个展示的类型和文本长度。`method`是选定一段文本，分两种一个是直接取你的文章描述，一个是从你的文字内容开始，`length`是截取的文本长度。
+![](HEXO搭载安知鱼主题/file-20250319162207544.png)
+
+之后设置完你会发现，你的文章卡片的描述出不来。这样的效果一行空白。
+![](HEXO搭载安知鱼主题/file-20250319162503690.png)
+
+我最后定位到是`themes\anzhiyu\layout\includes\mixins\post-ui.pug`，这个文件做了部分判断逻辑，因为配置文件默认的`method`是2，我也就在2的基础上做改动。
+![](HEXO搭载安知鱼主题/file-20250319163120425.png)
+搜索`theme.index_post_content.method`，定位到追加修改的内容，就在`when 2`下做修改，可以沿用我这个内容，因为卡片的文本长度最多32，所以超过32后面的部分拼接...省略号，获取的文本如果你的文章没有定义`description`会默认从文章内容开始截取32个字符展示。<font color="#ff0000">注意空格缩进位。</font>
+```js
+if article.description
+  - const content = strip_html(article.description)
+  - let expert = content.substring(0, theme.index_post_content.length)
+  - content.length > theme.index_post_content.length ? expert += ' ...' : ''
+  .recent-post-info-top!= expert
+else
+  - const content = strip_html(article.description)
+  - let expert = content.substring(0, theme.index_post_content.length)
+  - content.length > theme.index_post_content.length ? expert += ' ...' : ''
+  .recent-post-info-top!= expert
+```
+之后重新启动hexo项目就可以看到效果了。
+![](HEXO搭载安知鱼主题/file-20250319170037373.png)
+{% endnote %}
 ## 个人卡片
 
+这部分内容大都在`_config.anzhiyu.yml`配置里修改，只有左下角的内容是需要在`_config.yml`做配置，分为两个部分下面的微信公众号得自己去申请。
+![](HEXO搭载安知鱼主题/file-20250319171043520.png)
+头像修改在`avatar`配置下，修改图片地址，`effect`设置为`true`的话你的头像会转起来。
+![](HEXO搭载安知鱼主题/file-20250319171704843.png)
+头像的右下角的小图标也是一个图片地址，在`author_status`做修改，你要先设置启用状态`enable:true`，修改`statusImg`就可以显示你的右下角图标。
+![](HEXO搭载安知鱼主题/file-20250319171824865.png)
+左下角的文本和名字是在另一个文件配置中设置，也是你的网站浏览器窗口tab的文本信息。
+![](HEXO搭载安知鱼主题/file-20250319172130328.png)
+具体在`_config.yml`文件，注意不是前面的`_config.anzhiyu.yml`是另一个文件这个文件是HEXO自己的配置文件。
+![](HEXO搭载安知鱼主题/file-20250319172245911.png)
+搜索`title`，找到几行配置进行修改即可。title是前面的部分可以定义任何信息，subtitle是后面的部分也是个人卡片的描述，`author`是你自己定义的名字。
+![](HEXO搭载安知鱼主题/file-20250319172336904.png)
+配置信息
+```yml
+title: FreeFunk
+subtitle: 南柯一梦
+description: ''
+keywords:
+author: FreeFunk
+language: zh-CN
+timezone: ''
+```
+右边的两个跳转链接就回到我们一开始的配置文件`_config.anzhiyu.yml`下操作。
+![](HEXO搭载安知鱼主题/file-20250319172801879.png)
+搜索`social`，修改地址和图标即可
+![](HEXO搭载安知鱼主题/file-20250319172834733.png)
+最后这个卡片有一个交互就是鼠标悬浮到卡片上会翻转卡片，这里可以定义你的文本，不过这部分是一个html的文本信息。
+![](HEXO搭载安知鱼主题/file-20250319172954198.png)
+搜索`card_author`，启用配置修改`description`配置即可。
+![](HEXO搭载安知鱼主题/file-20250319173058725.png)
+配置信息如下，注意`aside.enable`也要设置true，卡片才能开启。
+~~~yml
+aside:
+  enable: true
+  hide: false
+  button: true
+  mobile: true # display on mobile
+  position: right # left or right
+  display: # 控制对应详情页面是否显示侧边栏
+    archive: true
+    tag: true
+    category: true
+  card_author:
+    enable: true
+    description:  <div style="line-height:1.38;margin:0.6rem 0;text-align:center;color:rgba(255, 255, 255, 0.8);font-size:20px;font-family:initial;font-weight:bold;">要么一切，要么全无</div> # 默认为站点描述
+    name_link: /
+~~~
+下方的公众号你可以自己申请，自己PS设计一下排版，生成两张图片一个是正面的一个是背面的。
+{% image ![](HEXO搭载安知鱼主题/file-20250319173840525.png)  , alt=正面 %}
+{% image ![](HEXO搭载安知鱼主题/file-20250319174011074.png)  , alt=背面 %}
+配置修改在`card_weixin`配置中，打开启用，face就是正面图，backFace就是背面图。
+![](HEXO搭载安知鱼主题/file-20250319174054631.png)
 ## 网站统计
 
 ## 底部配置
@@ -151,7 +261,7 @@ thumbnail: false
 
 # <h1 id="page_conf">页面设置</h1>
 
-##  Front-matter
+##  <h2 id="front-matter">Front-matter</h2>
 
 ## 标签页
 
