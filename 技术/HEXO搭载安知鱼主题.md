@@ -1,7 +1,7 @@
 ---
 title: HEXO搭载安知鱼主题
 date: 2025-03-10 09:27:38
-updated: 2025-03-16 17:27:38
+updated: 2025-03-20 10:50:38
 categories: 技术
 tags:
   - HEXO
@@ -72,8 +72,10 @@ thumbnail: false
 ![](HEXO搭载安知鱼主题/file-20250316171913126.png)
 ## 顶部图
 
+{% note primary no-icon %}
 这里总共分三个部分，左侧的大图可以做一些特效流的改动，安知鱼官方有提供类似[人潮汹涌](https://www.bilibili.com/video/BV1RP411E7rM)的效果可自行去修改，右边的大图是一个简单的图片点击是一个可设置的链接。下面的三个按钮是自己定义的文章分类入口，你的文章是哪个分类就会进入这一类的文章列表。
 ![](HEXO搭载安知鱼主题/file-20250316172351645.png)
+{% endnote %}
 
 左侧大图因为我没有选择人潮涌动的效果，只是选择了图标轮播，所以需要单独创建配置文件，定义轮播的信息，而且要把人潮涌动的效果关闭。在`yml`文件下搜索`peoplecanvas`，把`enable:true`改为`enable:false`。
 ![](HEXO搭载安知鱼主题/file-20250316173440460.png)
@@ -167,8 +169,10 @@ aside: false
 
 ## 文章卡片
 
+{% note primary no-icon %}
 文章的设置大部分在配置文件中调整，有一个涉及描述无法显示的bug，我在本地自己调整了需求修改`pug`文件。
 ![](HEXO搭载安知鱼主题/file-20250319155515263.png)
+{% endnote %}
 `_config.anzhiyu.yml`配置文件中搜索`default_cover`这个配置是文章卡片的默认封面。如果你的文章没有定义封面，默认从配置文件这里取。
 ![](HEXO搭载安知鱼主题/file-20250319155656381.png)
 
@@ -202,8 +206,11 @@ else
 {% endnote %}
 ## 个人卡片
 
-这部分内容大都在`_config.anzhiyu.yml`配置里修改，只有左下角的内容是需要在`_config.yml`做配置，分为两个部分下面的微信公众号得自己去申请。
+{% note default no-icon %}
+这部分内容大都在`_config.anzhiyu.yml`配置里修改，只有左下角的内容是需要在`_config.yml`做配置，分为两个部分下面的微信公众号得自己去申请。主色调的调整可以在`theme_color`配置里修改
 ![](HEXO搭载安知鱼主题/file-20250319171043520.png)
+{% endnote %}
+
 头像修改在`avatar`配置下，修改图片地址，`effect`设置为`true`的话你的头像会转起来。
 ![](HEXO搭载安知鱼主题/file-20250319171704843.png)
 头像的右下角的小图标也是一个图片地址，在`author_status`做修改，你要先设置启用状态`enable:true`，修改`statusImg`就可以显示你的右下角图标。
@@ -250,17 +257,90 @@ aside:
     name_link: /
 ~~~
 下方的公众号你可以自己申请，自己PS设计一下排版，生成两张图片一个是正面的一个是背面的。
-{% image ![](HEXO搭载安知鱼主题/file-20250319173840525.png)  , alt=正面 %}
-{% image ![](HEXO搭载安知鱼主题/file-20250319174011074.png)  , alt=背面 %}
+![正面](HEXO搭载安知鱼主题/file-20250319173840525.png)
+![背面](HEXO搭载安知鱼主题/file-20250319174011074.png)
 配置修改在`card_weixin`配置中，打开启用，face就是正面图，backFace就是背面图。
 ![](HEXO搭载安知鱼主题/file-20250319174054631.png)
 ## 网站统计
 
+{% note info no-icon %}
+位于右下角的内容显示
+![](HEXO搭载安知鱼主题/file-20250320100916500.png)
+{% endnote %}
+
+可以去安知鱼文档检查有很多配置包括什么最近更新时间、总字数什么的，这里我只放了这三份。在配置文件`_config.anzhiyu.yml`，搜索`runtimeshow`配置启用，定义`publish_date`配置这是定义你自己博客网站的建站开始时间，格式是:`m/DD/yyyy HH:mm:ss`。
+![](HEXO搭载安知鱼主题/file-20250320101246658.png)
+```yml
+# Time difference between publish date and now (网页运行时间)
+# Formal: Month/Day/Year Time or Year/Month/Day Time
+runtimeshow:
+  enable: true
+  publish_date: 2/10/2025 00:00:00
+```
+文章总数要搜索配置`card_webinfo`，设置启用配置`post_count:true`，统计文章总数。`last_push_date`配置是最近更新时间。
+![](HEXO搭载安知鱼主题/file-20250320103309826.png)
+```yml
+card_webinfo:
+  enable: true
+  post_count: true
+  last_push_date: false
+  sort_order: # Don't modify the setting unless you know how it works
+```
+字数统计配置搜索`wordcount`，这部分的改动也会同步修改到文章内部的统计，主题会把这个字数统计的配置用在全局中。
+![](HEXO搭载安知鱼主题/file-20250320103514635.png)
+`post_wordcount`是文章内部的总字数，`total_wordcount`是全站总字数。
+```yml
+# wordcount (字数统计)
+# see https://blog.anheyu.com/posts/c27d.html#字数统计
+wordcount:
+  enable: true
+  post_wordcount: true
+  min2read: true
+  total_wordcount: true
+```
 ## 底部配置
 
+{% note default no-icon %}
+底部配置我设置的内容比较少，底部设置的内容很多，有需求的小伙伴可以查看文档追加，基本就是设置启用就可以看到了，然后在配置自己各个的平台地址，设置自己喜欢的图标就可以了。
+![](HEXO搭载安知鱼主题/file-20250320104236086.png)
+{% endnote %}
 
+这部分的内容配置在`_config.anzhiyu.yml`，搜索`footer`涉及的配置很多，有`owner、runtime、bdageitem、socialBar、list、footerBar`需要什么就开启启用。
+![](HEXO搭载安知鱼主题/file-20250320104557940.png)
+我这部分涉及`socialBar`就一行简单的平台链接，`title`是显示文本，`link`是地址链接、`icon`是显示图标，区分左右。
+![](HEXO搭载安知鱼主题/file-20250320104736821.png)
+```yml
+socialBar:
+  enable: true
+  centerImg:
+  left:
+    - title: email
+      link: mailto:2917426372@qq.com
+      icon: anzhiyu-icon-envelope
+    - title: 微博
+      link: https://weibo.com/u/6229901786
+      icon: anzhiyu-icon-weibo
+    - title: facebook
+      link: https://www.facebook.com/profile.php?id=100092208016287&sk=about
+      icon: anzhiyu-icon-facebook1
+    # - title: RSS
+    #   link: atom.xml
+    #   icon: anzhiyu-icon-rss
+  right:
+    - title: Github
+      link: https://github.com/FreeFunk
+      icon: anzhiyu-icon-github
+    - title: Bilibili
+      link: https://space.bilibili.com/242466102
+      icon: anzhiyu-icon-bilibili
+    - title: 抖音
+      link: https://v.douyin.com/iPvHXkYo/
+      icon: anzhiyu-icon-tiktok
+```
 # <h1 id="page_conf">页面设置</h1>
+{% note info no-icon %}
 
+{% endnote %}
 ##  <h2 id="front-matter">Front-matter</h2>
 
 ## 标签页
@@ -276,3 +356,4 @@ aside:
 
 
 
+# 全站搜索器
