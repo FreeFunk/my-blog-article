@@ -337,22 +337,25 @@ socialBar:
       link: https://v.douyin.com/iPvHXkYo/
       icon: anzhiyu-icon-tiktok
 ```
-# <h1 id="page_conf">页面设置</h1>
+
+<h1 id="page_conf">页面设置</h1>
 {% note info no-icon %}
 
 {% endnote %}
-##  <h2 id="front-matter">Front-matter</h2>
+
+<h2 id="front-matter">Front-matter</h2>
 
 ## 标签页
 
 ## 分类页
 
-## <h2 id="my_page_conf">个人页</h2>
+<h2 id="my_page_conf">个人页</h2>
 
 
 # 看娘设置
 
-# <h1 id="amintion_conf">追番页设置</h1>
+
+<h1 id="amintion_conf">追番页设置</h1>
 
 
 
