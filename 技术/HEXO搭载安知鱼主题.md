@@ -1,7 +1,7 @@
 ---
 title: HEXO搭载安知鱼主题
 date: 2025-03-10 09:27:38
-updated: 2025-03-20 10:50:38
+updated: 2025-03-20 22:16:38
 categories: 技术
 tags:
   - HEXO
@@ -340,23 +340,436 @@ socialBar:
 
 <h1 id="page_conf">页面设置</h1>
 {% note info no-icon %}
-
+这部分的内容其实就是在定义一些页面的基础信息，通过`md`文件的头部配置信息，定义一些全局变量，通过这些变量就可以生成一个页面的基础信息。这里的页面设置又分为`page`页面设置和`post`文章设置。
 {% endnote %}
-
 <h2 id="front-matter">Front-matter</h2>
-
+{% note info no-icon %}
+用于头部定义的配置信息的语法，[Front-matter简介和视频](https://hexo.io/zh-cn/docs/front-matter)有说明这部分的信息，需要什么就定义什么。
+[安知鱼文档Front-matter链接](https://docs.anheyu.com/page/front-matter.html)
+{% endnote %}
+## Page Front-matter
+| 写法                    | 解释                                                             |
+| --------------------- | -------------------------------------------------------------- |
+| title                 | 【必需】页面标题                                                       |
+| date                  | 【必需】页面创建日期                                                     |
+| type                  | 【必需】标签、分类、关于、音乐馆、友情链接、相册、相册详情、朋友圈、即刻页面需要配置                     |
+| updated               | 【可选】页面更新日期                                                     |
+| description           | 【可选】页面描述                                                       |
+| keywords              | 【可选】页面关键字                                                      |
+| comments              | 【可选】显示页面评论模块(默认 true)                                          |
+| top_img               | 【可选】页面顶部图片                                                     |
+| mathjax               | 【可选】显示 mathjax(当设置 mathjax 的 per_page: false 时，才需要配置，默认 false) |
+| katex                 | 【可选】显示 katex(当设置 katex 的 per_page: false 时，才需要配置，默认 false)     |
+| aside                 | 【可选】显示侧边栏 (默认 true)                                            |
+| aplayer               | 【可选】在需要的页面加载 aplayer 的 js 和 css,请参考文章下面的音乐 配置                  |
+| highlight_shrink      | 【可选】配置代码框是否展开(true/false)(默认为设置中 highlight_shrink 的配置)         |
+| top_single_background | 【可选】部分页面的顶部模块背景图片                                              |
+## Post Front-matter
+| 写法                    | 解释                                                             |
+| --------------------- | -------------------------------------------------------------- |
+| title                 | 【必需】文章标题                                                       |
+| date                  | 【必需】文章创建日期                                                     |
+| updated               | 【可选】文章更新日期                                                     |
+| tags                  | 【可选】文章标签                                                       |
+| categories            | 【可选】文章分类                                                       |
+| keywords              | 【可选】文章关键字                                                      |
+| description           | 【可选】文章描述                                                       |
+| top_img               | 【可选】文章顶部图片                                                     |
+| cover                 | 【可选】文章缩略图(如果没有设置 top_img,文章页顶部将显示缩略图，可设为 false/图片地址/留空)        |
+| comments              | 【可选】显示文章评论模块(默认 true)                                          |
+| toc                   | 【可选】显示文章 TOC(默认为设置中 toc 的 enable 配置)                           |
+| toc_number            | 【可选】显示 toc_number(默认为设置中 toc 的 number 配置)                      |
+| toc_style_simple      | 【可选】显示 toc 简洁模式                                                |
+| copyright             | 【可选】显示文章版权模块(默认为设置中 post_copyright 的 enable 配置)                |
+| copyright_author      | 【可选】文章版权模块的`文章作者`                                              |
+| copyright_author_href | 【可选】文章版权模块的`文章作者`链接                                            |
+| copyright_url         | 【可选】文章版权模块的`文章链接`链接                                            |
+| copyright_info        | 【可选】文章版权模块的版权声明文字                                              |
+| mathjax               | 【可选】显示 mathjax(当设置 mathjax 的 per_page: false 时，才需要配置，默认 false) |
+| katex                 | 【可选】显示 katex(当设置 katex 的 per_page: false 时，才需要配置，默认 false)     |
+| aplayer               | 【可选】在需要的页面加载 aplayer 的 js 和 css,请参考文章下面的`音乐` 配置                |
+| highlight_shrink      | 【可选】配置代码框是否展开(true/false)(默认为设置中 highlight_shrink 的配置)         |
+| aside                 | 【可选】显示侧边栏 (默认 true)                                            |
+| swiper_index          | 【可选】首页轮播图配置 index 索引，数字越小越靠前                                   |
+| top_group_index       | 【可选】首页右侧卡片组配置, 数字越小越靠前                                         |
+| ai                    | 【可选】文章ai摘要                                                     |
+| main_color            | 【可选】文章主色，必须是16进制颜色且有6位，不可缩减，例如#ffffff 不可写成#fff                 |
+{% note success no-icon %}
+我本人写文章一般喜欢用的配置如下，喜欢的可以使用。
+```yml
+---
+title:  #文章标题
+date: #文章创建日期
+updated:  #文章更新日期
+categories: #文章分类
+tags: #文章标签
+keywords: #文章关键字
+description: #文章描述
+top_img: #文章顶部图片
+cover: #文章缩略图(如果没有设置 top_img,文章页顶部将显示缩略图，可设为 false/图片地址/留空)
+copyright_author: 'FreeFunk' #文章版权模块的文章作者 
+copyright_author_href: 'https://blog.freefunk.pp.ua' #文章版权模块的文章作者链接
+main_color: '#e1efe1' #文章主色，必须是16进制颜色且有6位，不可缩减，例如#ffffff 不可写成#fff
+highlight_shrink: false #配置代码框是否展开(true/false)(默认为设置中 highlight_shrink 的配置)
+abbrlink: #随机字符串用作文章博客唯一键
+mathjax: true #文章分类
+thumbnail: false
+---
+```
+{% endnote %}
 ## 标签页
+{% note info no-icon %}
+根据上面的`Front-matter`对`md`文件定义你就可以设置你的标签页的配置了，[安知鱼定义标签页](https://docs.anheyu.com/page/tags.html)可以通过`hexo`生成一个文件目录，当然你可以自己直接创建出来。
+{% endnote %}
+这是我本地自己定义的标签`md`文件，主要是要定义`type: "tags"`
+```yml
+---
+title: 标签
+date: 2025-02-13 16:47:18
+type: "tags"
+comments: false
+aside: false
+top_img: false
+updated:
+description:
+keywords:
+mathjax:
+katex:
+aplayer:
+highlight_shrink:
+top_single_background:
+---
+```
+不做任何修饰的效果就是会收集你自己所有文章的`tags`标签信息展示。如果你想做一些调整可以在标签的`md`自行追加，就像写页面html的语法一样。
+![](HEXO搭载安知鱼主题/file-20250320205637354.png)
 
 ## 分类页
+{% note info no-icon %}
+和上面的标签页一样的步骤，[安知鱼定义分类页](https://docs.anheyu.com/page/classify.html)。
+{% endnote %}
+定义一样的`md`文件，留意这个类型`type: categories`
+```yml
+---
+title: 分类
+date: 2025-03-01 12:09:49
+top_img: false
+type: categories
+comments: false
+aside: false
+updated: 
+description: 
+keywords: 
+mathjax: 
+katex: 
+aplayer: 
+highlight_shrink: 
+top_single_background:
+---
+```
+没做任何修饰的页面也是和标签页一样，要做修改也是和标签页一样的逻辑。
+![](HEXO搭载安知鱼主题/file-20250320210412222.png)
 
 <h2 id="my_page_conf">个人页</h2>
+{% note info no-icon %}
+配置个人页面需要涉及两步，一个是定义`md`文件一个是配置一个`about.yml`配置项，[安知鱼关于页面配置](https://docs.anheyu.com/page/about.html)。
+![](HEXO搭载安知鱼主题/file-20250320210650017.png)
+{% endnote %}
+同样可以通过`hexo`命令生成一个about目录出现一个`md`文件，也可以自己直接生成`source\about\index.md`目录。定义的`front-matter`配置。
+```yml
+---
+title:
+date: 2025-02-15 14:36:59
+type: "about"
+updated:
+comments: false
+description:
+keywords:
+mathjax:
+katex:
+aside: false
+aplayer:
+highlight_shrink:
+top_single_background: "#68b88e"
+background: "#68b88e"
+---
+```
+之后在`_config.anzhiyu.yml`配置文件追加你的个人页面路径。搜索`menu`查找。
+![](HEXO搭载安知鱼主题/file-20250320210951748.png)
+之后在目录`source/_data/about.yml`找到这个`yml`文件，没有就新建一个。
+![](HEXO搭载安知鱼主题/file-20250320211110099.png)
+配置参数详情如下：
+|参数|备选值/类型|解释|
+|---|---|---|
+|class_name|关于页|【必须】页面类|
+|subtitle|string|【必须】副标题|
+|avatarImg|url|【必须】头像链接|
+|name|string|【必须 作者名称|
+|description|string|【必须】描述|
+|aboutsiteTips|object|【必须】站点关于提示相关配置|
+|aboutsiteTips.tips|string|【必须】站点关于提示性文字|
+|aboutsiteTips.title1|string|【必须】站点关于标题文字 1|
+|aboutsiteTips.title2|string|【必须】站点关于标题文字 2|
+|aboutsiteTips.word|list|【必须】站点关于标题滚动文字|
+|helloAbout|string|【必须】hello 文字|
+|skillsTips|object|【必须】技能相关配置|
+|skillsTips.tips|string|【必须】技能提示文字|
+|skillsTips.title|string|【必须】技能标题|
+|careers|object|【必须】生涯相关配置|
+|careers.tips|string|【必须】生涯提示性文字|
+|careers.title|string|【必须】生涯标题|
+|careers.list|list|【可选】生涯 item|
+|careers.list.desc|string|【可选】生涯 item 描述|
+|careers.list.color|string|【可选】生涯 item 圆圈颜色|
+|careers.img|string|【必须】生涯底部图片|
+|statistic|object|【必须】统计数据相关配置|
+|statistic.link|url|【必须】统计数据按钮前往链接|
+|statistic.text|string|【必须】统计数据按钮文字|
+|map|object|【必须】地图相关配置|
+|map.title|string|【必须】地图标题|
+|map.StrengthenTitle|string|【必须】地图大标题|
+|map.background|url|【必须】地图亮色模式背景|
+|map.backgroundDark|url|【必须】地图暗色模式背景|
+|selfInfo|object|【必须】作者相关信息配置|
+|selfInfo.selfInfoTips1|string|【必须】作者相关提示文字 1|
+|selfInfo.selfInfoContentYear|number|【必须】作者生日年份|
+|selfInfo.selfInfoTips2|string|【必须】作者相关提示文字 2|
+|selfInfo.selfInfoContent2|string|【必须】作者相关内容 2|
+|selfInfo.selfInfoTips3|string|【必须】作者相关提示文字 3|
+|selfInfo.selfInfoContent3|string|【必须】作者相关内容 3|
+|personalities|object|【必须】作者性格相关配置|
+|personalities.author_name|string|【必须】作者性格名称|
+|personalities.personality_type|string|【必须】作者性格类型|
+|personalities.photo_url|url|【必须】作者自拍图片|
+|personalities.personality_img|url|【必须】作者性格表述图片|
+|personalities.name_url|url|【必须】点击性格跳转到链接|
+|maxim|object|【必须】座右铭相关配置|
+|maxim.maxim_tips|string|【必须】座右铭相关提示文字|
+|maxim.maxim_top|string|【必须】座右铭相关顶部文字|
+|maxim.maxim_bottom|string|【必须】座右铭相关底部文字|
+|buff|object|【必须】特长相关配置|
+|buff.buff_tips|string|【必须】特长相关提示文字|
+|buff.buff_top|string|【必须】特长相关顶部文字|
+|buff.buff_bottom|string|【必须】特长相关底部文字|
+|game|object|【必须】爱好游戏相关配置|
+|game.game_tips|string|【必须】爱好游戏提示文字|
+|game.game_title|string|【必须】爱好游戏标题|
+|game.game_uid|string|【必须】爱好游戏 uid|
+|game.game_bg|url|【必须】爱好游戏背景|
+|comic|object|【必须】追番相关配置，需要 5 条数据|
+|comic.comic_tips|string|【必须】追番相关提示文字|
+|comic.comic_title|string|【必须】追番相关标题|
+|comic.comic_list|list|【必须】追番相关列表|
+|comic.comic_list.name|string|【必须】追番 item 名称|
+|comic.comic_list.href|url|【必须】追番 item 链接|
+|comic.comic_list.cover|url|【必须】追番 item 的 cover|
+|like|object|【必须】关注偏好相关配置|
+|like.like_tips|string|【必须】关注偏好配置提示文字|
+|like.like_title|string|【必须】关注偏好配置标题|
+|like.like_bg|url|【必须】关注偏好配置背景|
+|like.like_bottom|string|【必须】关注偏好配置底部文字|
+|music|object|【必须】音乐偏好相关配置|
+|music.music_tips|string|【必须】音乐偏好提示性文字|
+|music.music_title|string|【必须】音乐偏好标题|
+|music.music_bg|url|【必须】音乐偏好背景|
+|music.music_link|url|【必须】音乐偏好按钮链接|
+|reward_list|object|【可选】打赏相关配置，如果不配置将没有打赏模块|
+|reward_list.name|string|【必须】打赏 item 名称|
+|reward_list.amount|number|【必须】打赏 item 金额|
+|reward_list.datatime|Date|【必须】打赏 item 时间|
+|reward_list.suffix|string/元|【可选】打赏 item 后缀（默认元）|
 
+{% note danger no-icon %}
+注意：这里涉及的一些必须的配置是需要配置，要不然会报错，如果有些配置你不想需要，你需要去对应的`about.pug`文件进行注释删除，目录路径`themes\anzhiyu\layout\includes\page\about.pug`。
+![](HEXO搭载安知鱼主题/file-20250320211433320.png)
+方法就是找到对应的配置去到这个`about.pug`进行搜索，找到对应的一个方法体进行注释。
+![](HEXO搭载安知鱼主题/file-20250320211534952.png)
+这样就可以比较灵活的配成你想要的样子，包括可以移动这些内容的位置，包括内容方块的样式、字体大小，图片大小都可以设置，这个文件位于`themes\anzhiyu\source\css\_page\about.styl`。
+![](HEXO搭载安知鱼主题/file-20250320211709295.png)
+{% endnote %}
 
 # 看娘设置
+{% note default no-icon %}
+看娘就是在你的页面上加一个2d动漫人物，一般都是别人定义好的模型，直接拽过来用就可以，如果你想要自己想要的动漫人物模型需要去查看涉及`live2d`技术栈内容。
+[hexo适配的live2d](https://github.com/EYHN/hexo-helper-live2d)这个是一个GitHub项目，不过项目比较久远了，如果想用更新的模型可以用这个项目[支持操作项的live2D](https://github.com/stevenjoezhang/live2d-widget)项目比较新现在作者还在更新，支持点击交互发送消息等等，如果不喜欢的话可以去按照`live2D 看娘 Git项目`字条去搜索内容。
+{% endnote %}
 
+这是我自己的效果，包括模型大小，位置都可以在配置文件定义。模型名称是`live2d-widget-model-shizuku`
+![](HEXO搭载安知鱼主题/file-20250320212102410.png)
+
+安装模型，[模型列表](https://blog.csdn.net/wang_123_zy/article/details/87181892#live2dwidgetmodelchitose_12)
+```shell
+npm install --save '模型的名称'
+```
+安装完之后在你的`_config.yml`追加配置信息，[配置参数说明](https://l2dwidget.js.org/docs/class/src/index.js~L2Dwidget.html#instance-method-init)
+![](HEXO搭载安知鱼主题/file-20250320213220960.png)
+我本人的配置信息就比较少，主要调整一个位置和大小，并且在移动端不显示，因为这个`live2D`不会根据你的窗口自适应缩放，这样在移动端看娘会占大部分的窗口看不到东西。配置完之后重启就可以查看。
+```yml
+live2d:
+  enable: true
+  scriptFrom: local
+  pluginRootPath: live2dw/
+  pluginJsPath: lib/
+  pluginModelPath: assets/
+  tagMode: false
+  debug: false
+  model:
+    use: live2d-widget-model-shizuku
+  display:
+    position: left
+    width: 200
+    height: 350
+  mobile:
+    show: false
+  react:
+    opacity: 0.8
+```
 
 <h1 id="amintion_conf">追番页设置</h1>
+{% note default no-icon %}
+追番这个不必多说，我想每个二次元都想展示自己的阅番战绩，我用的`Git`项目是[hexo插件结合B站和Bangumi](https://github.com/HCLonely/hexo-bilibili-bangumi)，项目有一个好处是不限制拉取的网站内容，有些番在B站没有，但是在Bangumi是有的，所以我这里选择的是Bangumi的数据源。不过这个前提是你必要要有一个番站记录地址，手动在网站配你自己看过的动漫番这样这个插件才会拉到你的内容。
+拉取流程是本地安装插件，配置你的番站账号唯一键在配置文件里，设置你要拉取的数据源网站，之后执行拉取命令，这样会在你的`HEXO`项目中的`_source\_data`出现一些页面内容和`json`文件都是你自己设置已经看过的番，之后部署就可以看到你的追番信息。
+![](HEXO搭载安知鱼主题/file-20250320214207986.png)
+{% endnote %}
+登录[Bangumi](https://bgm.tv/anime)点击右上角的注册，注册一个账号。
+![](HEXO搭载安知鱼主题/file-20250320214307065.png)
+搜索你看过，或者你正在看或者你想看的番名。这个支持降噪查询非常nice。
+![](HEXO搭载安知鱼主题/file-20250320214656454.png)
+点击收藏，出现几个按钮想看、看过、在看，根据自己的需求选择。
+![](HEXO搭载安知鱼主题/file-20250320214808382.png)
+这个记录评价就根据自己来看，总之就是要记录一个数据方便后面获取。
+![](HEXO搭载安知鱼主题/file-20250320214846892.png)
+收录完你自己的动漫番数据，就回到你的项目安装插件。
+```shell
+npm install hexo-bilibili-bangumi --save
+```
+安装完之后去到你的`_config.yml`文件配置信息
+![](HEXO搭载安知鱼主题/file-20250320215028102.png)
+以下是我本人的内容主要是定义数据源、定义名称，初始化展示的tab列表，还有我的bangumi账号id。
+- 记得`enable`启用状态要打开。
+- 修改`source`为`bgm`。
+- 配置`order`排序支持`latest`(默认，按添加时间排序), `score`(评分升序), `-score`(评分降序)。
+- `show`配置是初始化打开的窗口，`0: 想看`, `1: 在看`, `2: 看过`，默认为`1`
+- `title`和`quote`在上面的文字展示
+- 至于`cinema`和`game`这两个是动漫电影和动漫游戏有需求的可以根据GitHub项目的描述设置。
+<font color="#ff0000">注意：`lazyload`这个配置一定要设置为`false`，因为涉及懒加载的问题。</font>
+```yml
+# 追番插件
+# https://github.com/HCLonely/hexo-bilibili-bangumi
+bangumi: # 追番设置
+  enable: true
+  source: bgm
+  # bgmInfoSource: 'bgmv0'
+  path:
+  vmid: 971164
+  title: '追番列表'
+  quote: '呜呜呜，二次元很美好...呜呜呜'
+  show: 2
+  lazyload: false
+  srcValue: '__image__'
+  lazyloadAttrName: 'data-src=__image__'
+  loading:
+  showMyComment: false
+  pagination: false
+  metaColor:
+  color:
+  webp:
+  progress:
+  progressBar:
+  extraOrder:
+  order: latest
+  # proxy:
+  #   host: '代理host'
+  #   port: '代理端口'
+  extra_options:
+    key: value
+  coverMirror:
+cinema: # 追剧设置
+  enable: false
+  path:
+  vmid: 242466102
+  title: '追剧列表'
+  quote: '生命不息，追剧不止！'
+  show: 2
+  lazyload: false
+  srcValue: '__image__'
+  lazyloadAttrName: 'data-src=__image__'
+  loading:
+  metaColor:
+  color:
+  webp:
+  progress:
+  progressBar:
+  extraOrder:
+  order:
+  extra_options:
+    key: value
+  coverMirror:
+game: # 游戏设置，仅支持source: bgmv0
+  enable: false
+  path:
+  source: bgmv0
+  vmid:
+  title: '游戏列表'
+  quote: '生命不息，游戏不止！'
+  show: 1
+  lazyload: false
+  srcValue: '__image__'
+  lazyloadAttrName: 'data-src=__image__'
+  loading:
+  metaColor:
+  color:
+  webp:
+  progress:
+  progressBar:
+  extraOrder:
+  order:
+  extra_options:
+    key: value
+  coverMirror:
+```
 
-
-
+获取你自己的bangumi的账号id，在bangumi页面开启`F12`输入一个`js`命令
+![](HEXO搭载安知鱼主题/file-20250320215439007.png)
+我用第一个命令没生效，最后选择的最后一个获取id的方式，获取的id复制到配置文件中的`vmid`配置
+```js
+//用户名
+document.getElementById('header').getElementsByTagName('a')[0].getAttribute('href').split('/').at(-1)
+//id
+CHOBITS_UID
+```
+![](HEXO搭载安知鱼主题/file-20250320215638467.png)
+配置完信息，执行拉取命令
+```shell
+# 更新追番数据
+hexo bangumi -u
+# 更新追剧数据
+hexo cinema -u
+# 删除清空追番数据
+hexo bangumi -d
+# 删除清空追剧数据
+hexo cinema -d
+```
+![](HEXO搭载安知鱼主题/file-20250320220631214.png)
+最后生成完数据可以去到自己的项目目录`source\_data`
+![](HEXO搭载安知鱼主题/file-20250320220734221.png)
+最后在`_config.anzhiyu.yml`配置文件中把你的追番页打开，重启项目即可看到你的战绩。
+![](HEXO搭载安知鱼主题/file-20250320220831894.png)
 # 全站搜索器
+
+{% note default no-icon %}
+搜索器是针对文章标题、内容等等做全局搜索，安装一个插件[hexo-generator-search](https://github.com/wzpan/hexo-generator-search)即可，做一个配置项就可以使用。
+![](HEXO搭载安知鱼主题/file-20250320221233482.png)
+{% endnote %}
+
+安装插件
+```shell
+npm install hexo-generator-search --save
+```
+安装成功之后前往`_config.anzhiyu.yml`配置文件，搜索`local_search`，设置`enable: true`，重启即可使用。
+![](HEXO搭载安知鱼主题/file-20250320221350874.png)
+
+# 总结
+
+{% note info no-icon %}
+这部分的内容近期就到这里，后续有新的插件或者改动的地方会继续更新，安知鱼提供的主题还有很多很好玩的部分，包括音乐浮窗，文章尾部设置，打赏，充电等等修饰的小组件，不过需要对文档多查看一下，改动很简单，遇到问题也不要着急，这个主题结合`HEXO`框架还是非常简约的，因为本人比较喜欢简单点，就没有那么复杂，大家可以去安知鱼官网下的友链有很多小伙伴的博客做得非常帅气，大家也可以参数别人的设计和排版，如果自己没有博客页面设计灵感可以先看看别人的博客网站。
+{% endnote %}
