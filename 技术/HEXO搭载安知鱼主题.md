@@ -371,6 +371,7 @@ socialBar:
 
 {% note info no-icon %}
 这部分的内容其实就是在定义一些页面的基础信息，通过`md`文件的头部配置信息，定义一些全局变量，通过这些变量就可以生成一个页面的基础信息。这里的页面设置又分为`page`页面设置和`post`文章设置。
+如何快速配置你的文章`Front-maater`可以看[Obsidian文章同步部署博客项目](https://blog.freefunk.pp.ua/3fa2a9c2.html)
 {% endnote %}
 
 <h2 id="front-matter">Front-matter</h2>

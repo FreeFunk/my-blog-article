@@ -1,7 +1,7 @@
 ---
 title: Obsidian文章同步部署博客项目
 date: 2025-03-21 09:31:12
-updated: 2025-03-21 09:31:12
+updated: 2025-03-22 00:00:12
 categories: 技术
 tags:
   - Obsidian
@@ -223,9 +223,177 @@ git push -u origin main
 之后回到你的`Obsidian`文章窗口看到右下角有了分支说明`Obsidian`已经读取到你的`.git`文件信息。
 ![](Obsidian文章同步部署博客项目/file-20250321233449400.png)
 
-设置你的`Git`快捷键{% kbd Ctrl %} + {% kbd p %}，弹出一个快捷键信息
+设置你的`Git`快捷键{% kbd Ctrl %} + {% kbd p %}，弹出一个快捷键信息，搜索`Git`就可以看到快捷键信息。
+![](Obsidian文章同步部署博客项目/file-20250321233655630.png)
+
+如果你要改变快捷键可以在设置里面的快捷键进行修改，一样是搜索`Git`
+![](Obsidian文章同步部署博客项目/file-20250321233759333.png)
 
 ## 配置Git Hooks脚本
 
+我这里配置的触发命令是在`git push`的时候执行我的脚本，首先先去你的文章目录下找到`.git`文件，如果看不到你需要把文件隐藏权限打开。
+![](Obsidian文章同步部署博客项目/file-20250321233903455.png)
+进入`.git`看到第一个文件`hooks`点击进入
+![](Obsidian文章同步部署博客项目/file-20250321234007833.png)
+看到`hooks`下面的所有文件，都是根据`git`指令来的，你需要在什么指令触发就把对应文件的`.sample`后缀删除，然后修改文件内容就可以用了。
+![](Obsidian文章同步部署博客项目/file-20250321234054467.png)
 
+我这里需要在`git push`之前触发执行我的内容，所以选择了`pre-push.sample`，删除后缀`.sample`
+![](Obsidian文章同步部署博客项目/file-20250321234249529.png)
 
+{% note danger no-icon %}
+我的脚本内容是定义一个目标文件夹，我的文章编写是在一个目录下，而我的博客网站项目是在另外一个文件夹下，而我最后要把文章部署到网站就需要把我的文章目录下的文章复制到我的博客网站下的文章资源目录里，并且把对应的图片也要一起原封不动的复制到我的博客网站里，并且做更新动作如果相同文件名就更新，不存在文件就新增，并且根据我当次提交到的文章git项目有涉及到删除的文件，那我的博客的文章资源也要对应的删除，最后执行我的博客项目git保存提交，部署我的博客到`Vercel`。
+流程步骤：
+1. 设置目标文件夹，打包本次提交的所有文件
+2. 对比这次提交的所有文件和目标文件夹下的文件，有就更新没有就新增，如果有文件删除相应目标文件夹也删除
+3. 执行目标文件夹对应的博客项目部署和提交命令，触发线上`Vercel`的自动部署
+4. 做一些收尾，提交你的博客项目文件。
+{% endnote %}
+
+```shell
+#!/bin/sh
+
+# An example hook script to verify what is about to be pushed.  Called by "git
+# push" after it has checked the remote status, but before anything has been
+# pushed.  If this script exits with a non-zero status nothing will be pushed.
+#
+# This hook is called with the following parameters:
+#
+# $1 -- Name of the remote to which the push is being done
+# $2 -- URL to which the push is being done
+#
+# If pushing without using a named remote those arguments will be equal.
+#
+# Information about the commits which are being pushed is supplied as lines to
+# the standard input in the form:
+#
+#   <local ref> <local sha1> <remote ref> <remote sha1>
+#
+# This sample shows how to prevent push of commits where the log message starts
+# with "WIP" (work in progress).
+
+# remote="$1"
+# url="$2"
+
+# z40=0000000000000000000000000000000000000000
+
+# while read local_ref local_sha remote_ref remote_sha
+# do
+	# if [ "$local_sha" = $z40 ]
+	# then
+		# # Handle delete
+		# :
+	# else
+		# if [ "$remote_sha" = $z40 ]
+		# then
+			# # New branch, examine all commits
+			# range="$local_sha"
+		# else
+			# # Update to existing branch, examine new commits
+			# range="$remote_sha..$local_sha"
+		# fi
+
+		# # Check for WIP commit
+		# commit=`git rev-list -n 1 --grep '^WIP' "$range"`
+		# if [ -n "$commit" ]
+		# then
+			# echo >&2 "Found WIP commit in $local_ref, not pushing"
+			# exit 1
+		# fi
+	# fi
+# done
+
+# exit 0
+
+# 目标文件夹路径（请根据需要修改）
+TARGET_DIR="D:/code/my-tool-code/Hexo-Blog/blog-demo/source/_posts"  # windows使用正斜杠替代反斜杠 <button class="citation-flag" data-index="1">
+
+# 获取当前分支名称
+CURRENT_BRANCH=$(git symbolic-ref --short HEAD)
+
+# 检查目标文件夹是否存在，如果不存在则创建
+if [ ! -d "$TARGET_DIR" ]; then
+  mkdir -p "$TARGET_DIR"
+fi
+
+# 获取当前提交中所有更改的文件列表，并逐行处理
+git diff --name-only --diff-filter=ACMRT HEAD~1 HEAD | while IFS= read -r FILE; do
+  # 忽略以小数点开头的文件或文件夹
+  if [[ "$FILE" == .* ]]; then
+    continue
+  fi
+  
+  # 忽略根目录下的 README.md 文件
+  if [[ "$FILE" == "README.md" ]]; then
+  continue
+  fi
+
+  # 确保目标文件夹的父目录存在
+  TARGET_FILE="$TARGET_DIR/$FILE"
+  TARGET_PARENT_DIR=$(dirname "$TARGET_FILE")
+  mkdir -p "$TARGET_PARENT_DIR"
+
+  # 复制文件到目标文件夹
+  cp --parents "$FILE" "$TARGET_DIR"
+done
+
+# 删除被移除的文件
+git diff --name-only --diff-filter=D HEAD~1 HEAD | while IFS= read -r FILE; do
+  # 忽略以小数点开头的文件或文件夹
+  if [[ "$FILE" == .* ]]; then
+    continue
+  fi
+
+  # 删除目标文件夹中的对应文件
+  TARGET_FILE="$TARGET_DIR/$FILE"
+  if [ -f "$TARGET_FILE" ]; then
+    rm "$TARGET_FILE"
+  fi
+done
+
+# 清理空文件夹
+find "$TARGET_DIR" -type d -empty -delete
+
+echo "Files have been synchronized to $TARGET_DIR"
+
+# 在指定文件夹中运行 Hexo 命令，这是你的博客网站的父级目录，能执行部署命令的目录
+HEXO_DIR="D:/code/my-tool-code/Hexo-Blog/blog-demo"
+if [ -d "$HEXO_DIR" ]; then
+  echo "Running Hexo commands in $HEXO_DIR..."
+  cd "$HEXO_DIR" || { echo "Failed to enter $HEXO_DIR"; exit 1; }
+  # 执行命令部署 并且提交到GitHub
+  hexo clean && hexo generate && hexo deploy
+else
+  echo "Hexo directory not found: $HEXO_DIR"
+fi
+
+echo "Files have been synchronized to $TARGET_DIR"
+
+# 切换到指定文件夹并执行 Git 操作
+GIT_REPO_DIR="D:/code/my-tool-code/Hexo-Blog/blog-demo"  # 替换为你的 Git 仓库路径
+if [ -d "$GIT_REPO_DIR" ]; then
+  echo "Switching to Git repository: $GIT_REPO_DIR"
+  cd "$GIT_REPO_DIR" || { echo "Failed to enter $GIT_REPO_DIR"; exit 1; }
+
+  # 执行 git fetch
+  echo "Fetching latest changes from remote..."
+  git fetch || { echo "Git fetch failed"; exit 1; }
+
+  # 执行 git pull
+  echo "Pulling latest changes from remote..."
+  git pull || { echo "Git pull failed"; exit 1; }
+
+  # 执行 git commit 并且命名提交信息
+  echo "Committing local changes..."
+  git add . || { echo "Git add failed"; exit 1; }
+  git commit -m "文章同步Hexo项目_post文件夹，提交Hexo项目文章内容，来自pre-push hook" || { echo "Git commit failed"; exit 1; }
+
+  # 执行 git push
+  echo "Pushing changes to remote..."
+  git push || { echo "Git push failed"; exit 1; }
+
+  echo "Git operations completed successfully!"
+else
+  echo "Git repository directory not found: $GIT_REPO_DIR"
+fi
+```

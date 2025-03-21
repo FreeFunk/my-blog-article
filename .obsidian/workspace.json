@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技术/Obsidian文章同步部署博客项目.md",
+                "file": "技术/搭建免费的个人博客网站.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Obsidian文章同步部署博客项目"
+              "title": "搭建免费的个人博客网站"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技术/Obsidian文章同步部署博客项目.md",
+                "file": "技术/搭建免费的个人博客网站.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Obsidian文章同步部署博客项目 的大纲"
+              "title": "搭建免费的个人博客网站 的大纲"
             }
           },
           {
@@ -182,22 +182,21 @@
   },
   "active": "6209a766c54537b5",
   "lastOpenFiles": [
+    "技术/HEXO搭载安知鱼主题.md",
+    "技术/搭建免费的个人博客网站.md",
+    "技术/Obsidian文章同步部署博客项目.md",
+    "技术/Obsidian文章同步部署博客项目/file-20250321234249529.png",
+    "技术/Obsidian文章同步部署博客项目/file-20250321234054467.png",
+    "技术/Obsidian文章同步部署博客项目/file-20250321234007833.png",
+    "技术/Obsidian文章同步部署博客项目/file-20250321233903455.png",
+    "技术/Obsidian文章同步部署博客项目/file-20250321233759333.png",
+    "技术/Obsidian文章同步部署博客项目/file-20250321233655630.png",
     "技术/Obsidian文章同步部署博客项目/file-20250321233449400.png",
     "技术/Obsidian文章同步部署博客项目/file-20250321232818725.png",
     "技术/Obsidian文章同步部署博客项目/file-20250321231845826.png",
     "技术/Obsidian文章同步部署博客项目/file-20250321231748982.png",
-    "技术/Obsidian文章同步部署博客项目/file-20250321231712182.png",
-    "技术/Obsidian文章同步部署博客项目/file-20250321231525116.png",
     "技术/DeepSeek接入微信公众号.md",
-    "技术/Obsidian文章同步部署博客项目.md",
-    "技术/Obsidian文章同步部署博客项目/file-20250321231456007.png",
-    "技术/Obsidian文章同步部署博客项目/file-20250321231259632.png",
-    "技术/Obsidian文章同步部署博客项目/file-20250321230944505.png",
-    "技术/Obsidian文章同步部署博客项目/file-20250321230550663.png",
-    "技术/Obsidian文章同步部署博客项目/file-20250321230321141.png",
     "技术/Obsidian文章同步部署博客项目",
-    "技术/HEXO搭载安知鱼主题.md",
-    "技术/搭建免费的个人博客网站.md",
     "技术/HEXO搭载安知鱼主题",
     "设计/Photoshop对图片中的人物做快速抠图.md",
     "技术/java/未命名.md",
