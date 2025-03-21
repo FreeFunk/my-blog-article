@@ -1,7 +1,7 @@
 ---
 title: HEXO搭载安知鱼主题
 date: 2025-03-10 09:27:38
-updated: 2025-03-20 22:16:38
+updated: 2025-03-21 09:16:38
 categories: 技术
 tags:
   - HEXO
@@ -11,7 +11,7 @@ keywords:
   - 安知鱼
 description: 原生HEXO页面自定义配置主题，并且定制化调整样式
 top_img: 
-cover: 
+cover: https://pic1.imgdb.cn/item/67dcc2a088c538a9b5c23af8.jpg
 copyright_author: FreeFunk
 copyright_author_href: https://blog.freefunk.pp.ua
 main_color: "#e1efe1"

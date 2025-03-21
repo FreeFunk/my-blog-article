@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "ab66292e864f3f28",
+        "id": "4d4d5994fcd18d90",
         "type": "tabs",
         "children": [
           {
-            "id": "fcbf4123364c7828",
+            "id": "6209a766c54537b5",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技术/HEXO搭载安知鱼主题.md",
+                "file": "技术/Obsidian文章同步部署博客项目.md",
                 "mode": "source",
-                "source": true
+                "source": false
               },
               "icon": "lucide-file",
-              "title": "HEXO搭载安知鱼主题"
+              "title": "Obsidian文章同步部署博客项目"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技术/HEXO搭载安知鱼主题.md",
+                "file": "技术/Obsidian文章同步部署博客项目.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "HEXO搭载安知鱼主题 的大纲"
+              "title": "Obsidian文章同步部署博客项目 的大纲"
             }
           },
           {
@@ -180,23 +180,24 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "6134e9ac8424830c",
+  "active": "6209a766c54537b5",
   "lastOpenFiles": [
-    "技术/HEXO搭载安知鱼主题/file-20250320221350874.png",
-    "技术/HEXO搭载安知鱼主题/file-20250320221233482.png",
-    "技术/HEXO搭载安知鱼主题/file-20250320220831894.png",
-    "技术/HEXO搭载安知鱼主题/file-20250320220734221.png",
-    "技术/HEXO搭载安知鱼主题/file-20250320220730945.png",
-    "技术/HEXO搭载安知鱼主题/file-20250320220631214.png",
-    "技术/HEXO搭载安知鱼主题/file-20250320215638467.png",
-    "技术/HEXO搭载安知鱼主题/file-20250320215439007.png",
-    "技术/HEXO搭载安知鱼主题/file-20250320215028102.png",
-    "技术/HEXO搭载安知鱼主题/file-20250320214846892.png",
-    "技术/HEXO搭载安知鱼主题/file-20250320214808382.png",
-    "技术/搭建免费的个人博客网站.md",
+    "技术/Obsidian文章同步部署博客项目/file-20250321233449400.png",
+    "技术/Obsidian文章同步部署博客项目/file-20250321232818725.png",
+    "技术/Obsidian文章同步部署博客项目/file-20250321231845826.png",
+    "技术/Obsidian文章同步部署博客项目/file-20250321231748982.png",
+    "技术/Obsidian文章同步部署博客项目/file-20250321231712182.png",
+    "技术/Obsidian文章同步部署博客项目/file-20250321231525116.png",
     "技术/DeepSeek接入微信公众号.md",
     "技术/Obsidian文章同步部署博客项目.md",
+    "技术/Obsidian文章同步部署博客项目/file-20250321231456007.png",
+    "技术/Obsidian文章同步部署博客项目/file-20250321231259632.png",
+    "技术/Obsidian文章同步部署博客项目/file-20250321230944505.png",
+    "技术/Obsidian文章同步部署博客项目/file-20250321230550663.png",
+    "技术/Obsidian文章同步部署博客项目/file-20250321230321141.png",
+    "技术/Obsidian文章同步部署博客项目",
     "技术/HEXO搭载安知鱼主题.md",
+    "技术/搭建免费的个人博客网站.md",
     "技术/HEXO搭载安知鱼主题",
     "设计/Photoshop对图片中的人物做快速抠图.md",
     "技术/java/未命名.md",
@@ -213,7 +214,6 @@
     "Template/hexo-post-init.js",
     "Template/hexo-categories-init.js",
     "Template",
-    "Scripts/hash_8c_2.js",
     "image/Pasted.md",
     "JAVA/SPRING/SPRING.md",
     "README.md",

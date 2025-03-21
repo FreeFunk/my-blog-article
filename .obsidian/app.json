@@ -3,5 +3,6 @@
   "newLinkFormat": "relative",
   "newFileLocation": "current",
   "useMarkdownLinks": true,
-  "readableLineLength": true
+  "readableLineLength": true,
+  "trashOption": "system"
 }
