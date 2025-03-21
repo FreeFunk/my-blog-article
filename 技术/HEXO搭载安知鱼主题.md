@@ -546,6 +546,304 @@ background: "#68b88e"
 之后在目录`source/_data/about.yml`找到这个`yml`文件，没有就新建一个。
 ![](HEXO搭载安知鱼主题/file-20250320211110099.png)
 
+配置参数如下，留意数据类型
+|参数|备选值/类型|解释|
+|---|---|---|
+|class_name|关于页|【必须】页面类|
+|subtitle|string|【必须】副标题|
+|avatarImg|url|【必须】头像链接|
+|name|string|【必须 作者名称|
+|description|string|【必须】描述|
+|aboutsiteTips|object|【必须】站点关于提示相关配置|
+|aboutsiteTips.tips|string|【必须】站点关于提示性文字|
+|aboutsiteTips.title1|string|【必须】站点关于标题文字 1|
+|aboutsiteTips.title2|string|【必须】站点关于标题文字 2|
+|aboutsiteTips.word|list|【必须】站点关于标题滚动文字|
+|helloAbout|string|【必须】hello 文字|
+|skillsTips|object|【必须】技能相关配置|
+|skillsTips.tips|string|【必须】技能提示文字|
+|skillsTips.title|string|【必须】技能标题|
+|careers|object|【必须】生涯相关配置|
+|careers.tips|string|【必须】生涯提示性文字|
+|careers.title|string|【必须】生涯标题|
+|careers.list|list|【可选】生涯 item|
+|careers.list.desc|string|【可选】生涯 item 描述|
+|careers.list.color|string|【可选】生涯 item 圆圈颜色|
+|careers.img|string|【必须】生涯底部图片|
+|statistic|object|【必须】统计数据相关配置|
+|statistic.link|url|【必须】统计数据按钮前往链接|
+|statistic.text|string|【必须】统计数据按钮文字|
+|map|object|【必须】地图相关配置|
+|map.title|string|【必须】地图标题|
+|map.StrengthenTitle|string|【必须】地图大标题|
+|map.background|url|【必须】地图亮色模式背景|
+|map.backgroundDark|url|【必须】地图暗色模式背景|
+|selfInfo|object|【必须】作者相关信息配置|
+|selfInfo.selfInfoTips1|string|【必须】作者相关提示文字 1|
+|selfInfo.selfInfoContentYear|number|【必须】作者生日年份|
+|selfInfo.selfInfoTips2|string|【必须】作者相关提示文字 2|
+|selfInfo.selfInfoContent2|string|【必须】作者相关内容 2|
+|selfInfo.selfInfoTips3|string|【必须】作者相关提示文字 3|
+|selfInfo.selfInfoContent3|string|【必须】作者相关内容 3|
+|personalities|object|【必须】作者性格相关配置|
+|personalities.author_name|string|【必须】作者性格名称|
+|personalities.personality_type|string|【必须】作者性格类型|
+|personalities.photo_url|url|【必须】作者自拍图片|
+|personalities.personality_img|url|【必须】作者性格表述图片|
+|personalities.name_url|url|【必须】点击性格跳转到链接|
+|maxim|object|【必须】座右铭相关配置|
+|maxim.maxim_tips|string|【必须】座右铭相关提示文字|
+|maxim.maxim_top|string|【必须】座右铭相关顶部文字|
+|maxim.maxim_bottom|string|【必须】座右铭相关底部文字|
+|buff|object|【必须】特长相关配置|
+|buff.buff_tips|string|【必须】特长相关提示文字|
+|buff.buff_top|string|【必须】特长相关顶部文字|
+|buff.buff_bottom|string|【必须】特长相关底部文字|
+|game|object|【必须】爱好游戏相关配置|
+|game.game_tips|string|【必须】爱好游戏提示文字|
+|game.game_title|string|【必须】爱好游戏标题|
+|game.game_uid|string|【必须】爱好游戏 uid|
+|game.game_bg|url|【必须】爱好游戏背景|
+|comic|object|【必须】追番相关配置，需要 5 条数据|
+|comic.comic_tips|string|【必须】追番相关提示文字|
+|comic.comic_title|string|【必须】追番相关标题|
+|comic.comic_list|list|【必须】追番相关列表|
+|comic.comic_list.name|string|【必须】追番 item 名称|
+|comic.comic_list.href|url|【必须】追番 item 链接|
+|comic.comic_list.cover|url|【必须】追番 item 的 cover|
+|like|object|【必须】关注偏好相关配置|
+|like.like_tips|string|【必须】关注偏好配置提示文字|
+|like.like_title|string|【必须】关注偏好配置标题|
+|like.like_bg|url|【必须】关注偏好配置背景|
+|like.like_bottom|string|【必须】关注偏好配置底部文字|
+|music|object|【必须】音乐偏好相关配置|
+|music.music_tips|string|【必须】音乐偏好提示性文字|
+|music.music_title|string|【必须】音乐偏好标题|
+|music.music_bg|url|【必须】音乐偏好背景|
+|music.music_link|url|【必须】音乐偏好按钮链接|
+|reward_list|object|【可选】打赏相关配置，如果不配置将没有打赏模块|
+|reward_list.name|string|【必须】打赏 item 名称|
+|reward_list.amount|number|【必须】打赏 item 金额|
+|reward_list.datatime|Date|【必须】打赏 item 时间|
+|reward_list.suffix|string/元|【可选】打赏 item 后缀（默认元）|
+
+我的配置项设置的也不多，有需要的可以看看
+```yml
+- class_name: FreeFunk
+  subtitle: 四季测量着一年的行程
+  avatarImg: https://pic1.imgdb.cn/item/67b0204ed0e0a243d4ff8a0d.jpg
+  avatarSkills:
+    left:
+      - 🤖️ 后端开发工程师
+      - 🔍 分享与热心帮助
+      # - 🏠 智能家居小能手
+      - 🔨 设计开发一条龙
+      - 💃 POPPING小菜鸡
+    right:
+      - 专修交互与设计 🤝
+      - 脚踏实地行动派 🏃
+      - 随笔记录爱好者 🧱
+      - 我是小小二次元 💢
+  name: 邱天柱
+  description: 是一名 后端开发工程师、一名POPPER(BooGie BlooD Crew、FreeDance Crew)、小小二次元
+  aboutsiteTips:
+    tips: 追求
+    title1: 源于
+    title2: 热爱而去 感受
+    word:
+      - 舞蹈
+      - 随笔
+      - 程序
+      - 体验
+  helloAbout: FreeFunk
+  # skillsTips:
+  #   tips: 技能
+  #   title: 开启创造力
+  careers:
+    tips: 舞蹈生涯
+    title: Keep On Dancing
+    list:
+      - desc: Fresno
+        color: "#93b5cf"
+      - desc: Twist O Flex
+        color: "#93b5cf"
+      - desc: Neck O Flex
+        color: "#93b5cf"
+      - desc: Master Flex
+        color: "#93b5cf"
+      - desc: Walk Out
+        color: "#93b5cf"
+      - desc: Romeo Twist
+        color: "#93b5cf"
+      - desc: Egyptian Twist
+        color: "#93b5cf"
+      - desc: Old Man
+        color: "#93b5cf"
+      - desc: Tida Wave
+        color: "#93b5cf"
+      - desc: Popping
+        color: "#93b5cf"
+    img: https://pic1.imgdb.cn/item/67b69014d0e0a243d400ddab.gif
+  statistic:
+    link: /archives
+    text: 文章隧道
+    cover: https://bu.dusays.com/2023/05/01/644f4b037b930.jpg
+  map:
+    title: 我现在住在
+    StrengthenTitle: 中国，海口市
+    background: https://pic1.imgdb.cn/item/67b03b5ed0e0a243d4ff9068.jpg
+    backgroundDark: https://pic1.imgdb.cn/item/67b03bf0d0e0a243d4ff909a.jpg
+  selfInfo:
+    selfInfoTips1: 生于
+    selfInfoContentYear: 1998
+    selfInfoTips2: 河北科技师范学院
+    selfInfoContent2: 计算科学与技术
+    selfInfoTips3: 现在职业
+    selfInfoContent3: 后端开发工程师👨
+  personalities:
+    author_name: 物流师
+    personality_type: ISTJ-A
+    photo_url: https://pic1.imgdb.cn/item/67ab599fd0e0a243d4fe6b08.png
+    personality_img: https://pic1.imgdb.cn/item/67b04f1dd0e0a243d4ff9689.png
+    name_url: https://www.16personalities.com/ch/istj-%E4%BA%BA%E6%A0%BC
+  maxim:
+    maxim_tips: 座右铭
+    maxim_top: 逆境
+    maxim_bottom: 是到达真理的一条道路。
+  buff:
+    buff_tips: 特长
+    buff_top: 臭跳街舞的、臭爱拍照的、臭爱画画的
+    buff_bottom: 二次元指数 MIN -> MAX
+  game:
+    game_tips: 爱好游戏
+    game_title: 如龙
+    game_uid: "UID: 125766904"
+    game_bg: https://pic1.imgdb.cn/item/67b04481d0e0a243d4ff934c.jpg
+  comic:
+    comic_tips: 爱好番剧
+    comic_title: 追番
+    comic_list:
+      - name: 干物妹，小埋
+        href: https://zh.moegirl.org.cn/干物妹！小埋
+        cover: https://pic1.imgdb.cn/item/67b7cf79d0e0a243d401269c.jpg
+      - name: 你好，世界
+        href: https://zh.moegirl.org.cn/HELLO_WORLD
+        cover: https://pic1.imgdb.cn/item/67b7cf78d0e0a243d4012699.jpg
+      - name: 你的名字
+        href: https://zh.moegirl.org.cn/你的名字。
+        cover: https://pic1.imgdb.cn/item/67b7cfb7d0e0a243d40126b3.jpg
+      - name: 天气之子
+        href: https://zh.moegirl.org.cn/天气之子
+        cover: https://pic1.imgdb.cn/item/67b7cfded0e0a243d40126bc.jpg
+      - name: 铃芽之旅
+        href: https://zh.moegirl.org.cn/铃芽之旅
+        cover: https://pic1.imgdb.cn/item/67b7cfa7d0e0a243d40126ab.jpg
+      - name: 秒速五厘米
+        href: https://zh.moegirl.org.cn/秒速5厘米
+        cover: https://pic1.imgdb.cn/item/67b7cfa8d0e0a243d40126af.jpg
+      - name: 言叶之庭
+        href: https://zh.moegirl.org.cn/言叶之庭
+        cover: https://pic1.imgdb.cn/item/67b7cff2d0e0a243d40126c3.jpg
+      - name: 未来少年柯南.巨大机毒娥号的复活
+        href: https://zh.moegirl.org.cn/未来少年柯南
+        cover: https://pic1.imgdb.cn/item/67b7cfe2d0e0a243d40126bd.jpg
+      - name: 鲁邦三世：卡里奥斯特罗之城
+        href: https://zh.moegirl.org.cn/鲁邦三世_卡里奥斯特罗之城
+        cover: https://pic1.imgdb.cn/item/67b7cfa8d0e0a243d40126ad.jpg
+      - name: 风之谷
+        href: https://zh.moegirl.org.cn/风之谷
+        cover: https://pic1.imgdb.cn/item/67b7cf79d0e0a243d401269b.jpg
+      - name: 天空之城
+        href: https://zh.moegirl.org.cn/天空之城
+        cover: https://pic1.imgdb.cn/item/67b7cfdcd0e0a243d40126bb.jpg
+      - name: 龙猫
+        href: https://zh.moegirl.org.cn/龙猫
+        cover: https://pic1.imgdb.cn/item/67b7cfa7d0e0a243d40126ac.jpg
+      - name: 魔女宅急便
+        href: https://zh.moegirl.org.cn/魔女宅急便
+        cover: https://pic1.imgdb.cn/item/67b7cfa8d0e0a243d40126b0.jpg
+      - name: 红猪
+        href: https://zh.moegirl.org.cn/红猪
+        cover: https://pic1.imgdb.cn/item/67b7cf95d0e0a243d40126a1.jpg
+      - name: 幽灵公主
+        href: https://zh.moegirl.org.cn/幽灵公主
+        cover: https://pic1.imgdb.cn/item/67b7cfffd0e0a243d40126c5.jpg
+      - name: 千与千寻
+        href: https://zh.moegirl.org.cn/千与千寻
+        cover: https://pic1.imgdb.cn/item/67b7cfd7d0e0a243d40126b9.jpg
+      - name: 哈尔的移动城堡
+        href: https://zh.moegirl.org.cn/哈尔的移动城堡
+        cover: https://pic1.imgdb.cn/item/67b7cf79d0e0a243d401269d.jpg
+      - name: 悬崖上的金鱼姬
+        href: https://zh.moegirl.org.cn/崖上的波妞
+        cover: https://pic1.imgdb.cn/item/67b7cff2d0e0a243d40126c2.jpg
+      - name: 起风了
+        href: https://zh.moegirl.org.cn/起风了(小说)#
+        cover: https://pic1.imgdb.cn/item/67b7cfb8d0e0a243d40126b7.jpg
+      - name: 你想活出怎样的人生
+        href: https://zh.moegirl.org.cn/你想活出怎样的人生？
+        cover: https://pic1.imgdb.cn/item/67b7cfb7d0e0a243d40126b4.jpg
+      - name: 间谍过家家
+        href: https://zh.moegirl.org.cn/间谍过家家
+        cover: https://pic1.imgdb.cn/item/67b7cf96d0e0a243d40126a5.jpg
+      - name: 辉夜大小姐
+        href: https://zh.moegirl.org.cn/辉夜大小姐想让我告白～天才们的恋爱头脑战～
+        cover: https://pic1.imgdb.cn/item/67b7cf96d0e0a243d40126a2.jpg
+      - name: 玉子市场
+        href: https://zh.moegirl.org.cn/玉子市场
+        cover: https://pic1.imgdb.cn/item/67b7d000d0e0a243d40126c6.jpg
+      - name: 冰菓
+        href: https://zh.moegirl.org.cn/冰菓
+        cover: https://pic1.imgdb.cn/item/67b7cf78d0e0a243d401269a.jpg
+      - name: 五等分的新娘
+        href: https://zh.moegirl.org.cn/五等分的新娘
+        cover: https://pic1.imgdb.cn/item/67b7cff2d0e0a243d40126c1.jpg
+      - name: 女神的咖啡厅
+        href: https://zh.moegirl.org.cn/女神咖啡厅
+        cover: https://pic1.imgdb.cn/item/67b7cfb8d0e0a243d40126b5.jpg
+      - name: 妻子变成小学生
+        href: https://zh.moegirl.org.cn/妻子变成小学生。
+        cover: https://pic1.imgdb.cn/item/67b7cfb8d0e0a243d40126b6.jpg
+      - name: 罪恶王冠
+        href: https://zh.moegirl.org.cn/罪恶王冠
+        cover: https://pic1.imgdb.cn/item/67b7d001d0e0a243d40126ca.jpg
+      - name: 天官赐福
+        href: https://zh.moegirl.org.cn/天官赐福
+        cover: https://pic1.imgdb.cn/item/67b7cfd7d0e0a243d40126ba.jpg
+      - name: 中二病也要谈恋爱！
+        href: https://zh.moegirl.org.cn/中二病也要谈恋爱！
+        cover: https://pic1.imgdb.cn/item/67b7d000d0e0a243d40126c7.jpg
+      - name: 未闻花名
+        href: https://zh.moegirl.org.cn/我们仍未知道那天所看见的花的名字。
+        cover: https://pic1.imgdb.cn/item/67b7cff0d0e0a243d40126bf.jpg
+      - name: 总之非常可爱
+        href: https://zh.moegirl.org.cn/总之就是非常可爱
+        cover: https://pic1.imgdb.cn/item/67b7d000d0e0a243d40126c9.jpg
+      - name: 邻家的天使同学
+        href: https://zh.moegirl.org.cn/关于我在无意间被隔壁的天使变成废柴这件事
+        cover: https://pic1.imgdb.cn/item/67b7cf97d0e0a243d40126a6.jpg
+      - name: 继母的拖油瓶是我的前女友
+        href: https://zh.moegirl.org.cn/继母的拖油瓶是我的前女友
+        cover: https://pic1.imgdb.cn/item/67b7cf96d0e0a243d40126a3.jpg
+      - name: 我决定和班上最讨厌的女生结婚了
+        href: https://zh.moegirl.org.cn/我决定和班上最讨厌的女生结婚了
+        cover: https://pic1.imgdb.cn/item/67b7cff1d0e0a243d40126c0.jpg
+  like:
+    like_tips: 关注偏好
+    like_title: 数码科技
+    like_bg: https://bu.dusays.com/2022/12/06/638f5f05ce1f7.jpg
+    like_bottom: 手机、电脑软硬件
+  music:
+    music_tips: 音乐偏好
+    music_title: 嘻哈、抒情、民谣
+    music_bg: https://pic1.imgdb.cn/item/67b046d9d0e0a243d4ff93e7.jpg
+    music_link: /music
+  reward_list:
+    - name: 海阔蓝
+      amount: 8.8
+      datatime: 2023-03-28
+```
+
 {% note danger no-icon %}
 注意：这里涉及的一些必须的配置是需要配置，要不然会报错，如果有些配置你不想需要，你需要去对应的`about.pug`文件进行注释删除，目录路径`themes\anzhiyu\layout\includes\page\about.pug`。
 ![](HEXO搭载安知鱼主题/file-20250320211433320.png)
