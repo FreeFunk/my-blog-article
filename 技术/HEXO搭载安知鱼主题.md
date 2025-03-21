@@ -38,11 +38,13 @@ thumbnail: false
 - **[安知鱼官方页面](https://blog.anheyu.com/)**
 - **[安知鱼B站](https://space.bilibili.com/372204786)**
 {% endnote %}
+
 # 首页
 
 {% note info no-icon %}
 如果涉及到换图片的部分，可以去注册一个图床，[聚合图床](https://www.superbed.cn/)或者[去不图床](https://7bu.top/)，我用的是前者，后者好像要收费就没用。当然你也可以把图片放到你的项目里，但是初始化加载会挺慢的。
 {% endnote %}
+
 ## 顶部配置
 
 这部分我只做了左侧和中间这部分的改动。
@@ -70,6 +72,7 @@ thumbnail: false
 
 这部分还是在上面提到的`menu`配置下面，具体生成配置可前往标题[个人页面](#my_page_conf)，随便逛逛可以根据你自己的需求去做改动
 ![](HEXO搭载安知鱼主题/file-20250316171913126.png)
+
 ## 顶部图
 
 {% note primary no-icon %}
@@ -148,8 +151,10 @@ thumbnail: false
 
 追加完md文件之后配置`_config.anzhiyu.yml`，搜索`home_top`，修改`categories`
 ![](HEXO搭载安知鱼主题/file-20250319153038375.png)
+
 三个按钮对应三份页面信息需要单独创建index.md文件，而且建议按照你命名的文字来定义目录，目录层级如下：
 ![](HEXO搭载安知鱼主题/file-20250318210806908.png)
+
 追加如下信息，也可以根据你的喜好去修改，具体修改可以跳到[Front-matter](#front-matter)，检查具体配置。
 ```yml
 ---
@@ -164,6 +169,7 @@ aside: false
 
 右侧的大图是一个图片查询点击跳转的功能
 ![](HEXO搭载安知鱼主题/file-20250319154703919.png)
+
 文本、图片地址、跳转地址都在配置文件修改`_config.anzhiyu.yml`，搜索`home_top`，修改`banner`配置。`immage`是图片地址，`link`点击图片跳转的地址。
 ![](HEXO搭载安知鱼主题/file-20250319154948047.png)
 
@@ -173,6 +179,7 @@ aside: false
 文章的设置大部分在配置文件中调整，有一个涉及描述无法显示的bug，我在本地自己调整了需求修改`pug`文件。
 ![](HEXO搭载安知鱼主题/file-20250319155515263.png)
 {% endnote %}
+
 `_config.anzhiyu.yml`配置文件中搜索`default_cover`这个配置是文章卡片的默认封面。如果你的文章没有定义封面，默认从配置文件这里取。
 ![](HEXO搭载安知鱼主题/file-20250319155656381.png)
 
@@ -188,6 +195,7 @@ aside: false
 
 我最后定位到是`themes\anzhiyu\layout\includes\mixins\post-ui.pug`，这个文件做了部分判断逻辑，因为配置文件默认的`method`是2，我也就在2的基础上做改动。
 ![](HEXO搭载安知鱼主题/file-20250319163120425.png)
+
 搜索`theme.index_post_content.method`，定位到追加修改的内容，就在`when 2`下做修改，可以沿用我这个内容，因为卡片的文本长度最多32，所以超过32后面的部分拼接...省略号，获取的文本如果你的文章没有定义`description`会默认从文章内容开始截取32个字符展示。<font color="#ff0000">注意空格缩进位。</font>
 ```js
 if article.description
@@ -201,9 +209,11 @@ else
   - content.length > theme.index_post_content.length ? expert += ' ...' : ''
   .recent-post-info-top!= expert
 ```
+
 之后重新启动hexo项目就可以看到效果了。
 ![](HEXO搭载安知鱼主题/file-20250319170037373.png)
 {% endnote %}
+
 ## 个人卡片
 
 {% note default no-icon %}
@@ -213,14 +223,19 @@ else
 
 头像修改在`avatar`配置下，修改图片地址，`effect`设置为`true`的话你的头像会转起来。
 ![](HEXO搭载安知鱼主题/file-20250319171704843.png)
+
 头像的右下角的小图标也是一个图片地址，在`author_status`做修改，你要先设置启用状态`enable:true`，修改`statusImg`就可以显示你的右下角图标。
 ![](HEXO搭载安知鱼主题/file-20250319171824865.png)
+
 左下角的文本和名字是在另一个文件配置中设置，也是你的网站浏览器窗口tab的文本信息。
 ![](HEXO搭载安知鱼主题/file-20250319172130328.png)
+
 具体在`_config.yml`文件，注意不是前面的`_config.anzhiyu.yml`是另一个文件这个文件是HEXO自己的配置文件。
 ![](HEXO搭载安知鱼主题/file-20250319172245911.png)
+
 搜索`title`，找到几行配置进行修改即可。title是前面的部分可以定义任何信息，subtitle是后面的部分也是个人卡片的描述，`author`是你自己定义的名字。
 ![](HEXO搭载安知鱼主题/file-20250319172336904.png)
+
 配置信息
 ```yml
 title: FreeFunk
@@ -231,14 +246,19 @@ author: FreeFunk
 language: zh-CN
 timezone: ''
 ```
+
 右边的两个跳转链接就回到我们一开始的配置文件`_config.anzhiyu.yml`下操作。
 ![](HEXO搭载安知鱼主题/file-20250319172801879.png)
+
 搜索`social`，修改地址和图标即可
 ![](HEXO搭载安知鱼主题/file-20250319172834733.png)
+
 最后这个卡片有一个交互就是鼠标悬浮到卡片上会翻转卡片，这里可以定义你的文本，不过这部分是一个html的文本信息。
 ![](HEXO搭载安知鱼主题/file-20250319172954198.png)
+
 搜索`card_author`，启用配置修改`description`配置即可。
 ![](HEXO搭载安知鱼主题/file-20250319173058725.png)
+
 配置信息如下，注意`aside.enable`也要设置true，卡片才能开启。
 ~~~yml
 aside:
@@ -256,11 +276,14 @@ aside:
     description:  <div style="line-height:1.38;margin:0.6rem 0;text-align:center;color:rgba(255, 255, 255, 0.8);font-size:20px;font-family:initial;font-weight:bold;">要么一切，要么全无</div> # 默认为站点描述
     name_link: /
 ~~~
+
 下方的公众号你可以自己申请，自己PS设计一下排版，生成两张图片一个是正面的一个是背面的。
 ![正面](HEXO搭载安知鱼主题/file-20250319173840525.png)
 ![背面](HEXO搭载安知鱼主题/file-20250319174011074.png)
+
 配置修改在`card_weixin`配置中，打开启用，face就是正面图，backFace就是背面图。
 ![](HEXO搭载安知鱼主题/file-20250319174054631.png)
+
 ## 网站统计
 
 {% note info no-icon %}
@@ -277,8 +300,10 @@ runtimeshow:
   enable: true
   publish_date: 2/10/2025 00:00:00
 ```
+
 文章总数要搜索配置`card_webinfo`，设置启用配置`post_count:true`，统计文章总数。`last_push_date`配置是最近更新时间。
 ![](HEXO搭载安知鱼主题/file-20250320103309826.png)
+
 ```yml
 card_webinfo:
   enable: true
@@ -286,8 +311,10 @@ card_webinfo:
   last_push_date: false
   sort_order: # Don't modify the setting unless you know how it works
 ```
+
 字数统计配置搜索`wordcount`，这部分的改动也会同步修改到文章内部的统计，主题会把这个字数统计的配置用在全局中。
 ![](HEXO搭载安知鱼主题/file-20250320103514635.png)
+
 `post_wordcount`是文章内部的总字数，`total_wordcount`是全站总字数。
 ```yml
 # wordcount (字数统计)
@@ -307,8 +334,10 @@ wordcount:
 
 这部分的内容配置在`_config.anzhiyu.yml`，搜索`footer`涉及的配置很多，有`owner、runtime、bdageitem、socialBar、list、footerBar`需要什么就开启启用。
 ![](HEXO搭载安知鱼主题/file-20250320104557940.png)
+
 我这部分涉及`socialBar`就一行简单的平台链接，`title`是显示文本，`link`是地址链接、`icon`是显示图标，区分左右。
 ![](HEXO搭载安知鱼主题/file-20250320104736821.png)
+
 ```yml
 socialBar:
   enable: true
@@ -339,15 +368,20 @@ socialBar:
 ```
 
 <h1 id="page_conf">页面设置</h1>
+
 {% note info no-icon %}
 这部分的内容其实就是在定义一些页面的基础信息，通过`md`文件的头部配置信息，定义一些全局变量，通过这些变量就可以生成一个页面的基础信息。这里的页面设置又分为`page`页面设置和`post`文章设置。
 {% endnote %}
+
 <h2 id="front-matter">Front-matter</h2>
+
 {% note info no-icon %}
 用于头部定义的配置信息的语法，[Front-matter简介和视频](https://hexo.io/zh-cn/docs/front-matter)有说明这部分的信息，需要什么就定义什么。
 [安知鱼文档Front-matter链接](https://docs.anheyu.com/page/front-matter.html)
 {% endnote %}
-## Page Front-matter
+
+### Page Front-matter
+
 | 写法                    | 解释                                                             |
 | --------------------- | -------------------------------------------------------------- |
 | title                 | 【必需】页面标题                                                       |
@@ -364,7 +398,9 @@ socialBar:
 | aplayer               | 【可选】在需要的页面加载 aplayer 的 js 和 css,请参考文章下面的音乐 配置                  |
 | highlight_shrink      | 【可选】配置代码框是否展开(true/false)(默认为设置中 highlight_shrink 的配置)         |
 | top_single_background | 【可选】部分页面的顶部模块背景图片                                              |
-## Post Front-matter
+
+### Post Front-matter
+
 | 写法                    | 解释                                                             |
 | --------------------- | -------------------------------------------------------------- |
 | title                 | 【必需】文章标题                                                       |
@@ -394,6 +430,7 @@ socialBar:
 | top_group_index       | 【可选】首页右侧卡片组配置, 数字越小越靠前                                         |
 | ai                    | 【可选】文章ai摘要                                                     |
 | main_color            | 【可选】文章主色，必须是16进制颜色且有6位，不可缩减，例如#ffffff 不可写成#fff                 |
+
 {% note success no-icon %}
 我本人写文章一般喜欢用的配置如下，喜欢的可以使用。
 ```yml
@@ -417,10 +454,13 @@ thumbnail: false
 ---
 ```
 {% endnote %}
+
 ## 标签页
+
 {% note info no-icon %}
 根据上面的`Front-matter`对`md`文件定义你就可以设置你的标签页的配置了，[安知鱼定义标签页](https://docs.anheyu.com/page/tags.html)可以通过`hexo`生成一个文件目录，当然你可以自己直接创建出来。
 {% endnote %}
+
 这是我本地自己定义的标签`md`文件，主要是要定义`type: "tags"`
 ```yml
 ---
@@ -440,13 +480,16 @@ highlight_shrink:
 top_single_background:
 ---
 ```
+
 不做任何修饰的效果就是会收集你自己所有文章的`tags`标签信息展示。如果你想做一些调整可以在标签的`md`自行追加，就像写页面html的语法一样。
 ![](HEXO搭载安知鱼主题/file-20250320205637354.png)
 
 ## 分类页
+
 {% note info no-icon %}
 和上面的标签页一样的步骤，[安知鱼定义分类页](https://docs.anheyu.com/page/classify.html)。
 {% endnote %}
+
 定义一样的`md`文件，留意这个类型`type: categories`
 ```yml
 ---
@@ -466,14 +509,17 @@ highlight_shrink:
 top_single_background:
 ---
 ```
+
 没做任何修饰的页面也是和标签页一样，要做修改也是和标签页一样的逻辑。
 ![](HEXO搭载安知鱼主题/file-20250320210412222.png)
 
 <h2 id="my_page_conf">个人页</h2>
+
 {% note info no-icon %}
 配置个人页面需要涉及两步，一个是定义`md`文件一个是配置一个`about.yml`配置项，[安知鱼关于页面配置](https://docs.anheyu.com/page/about.html)。
 ![](HEXO搭载安知鱼主题/file-20250320210650017.png)
 {% endnote %}
+
 同样可以通过`hexo`命令生成一个about目录出现一个`md`文件，也可以自己直接生成`source\about\index.md`目录。定义的`front-matter`配置。
 ```yml
 ---
@@ -493,21 +539,26 @@ top_single_background: "#68b88e"
 background: "#68b88e"
 ---
 ```
+
 之后在`_config.anzhiyu.yml`配置文件追加你的个人页面路径。搜索`menu`查找。
 ![](HEXO搭载安知鱼主题/file-20250320210951748.png)
+
 之后在目录`source/_data/about.yml`找到这个`yml`文件，没有就新建一个。
 ![](HEXO搭载安知鱼主题/file-20250320211110099.png)
 
 {% note danger no-icon %}
 注意：这里涉及的一些必须的配置是需要配置，要不然会报错，如果有些配置你不想需要，你需要去对应的`about.pug`文件进行注释删除，目录路径`themes\anzhiyu\layout\includes\page\about.pug`。
 ![](HEXO搭载安知鱼主题/file-20250320211433320.png)
+
 方法就是找到对应的配置去到这个`about.pug`进行搜索，找到对应的一个方法体进行注释。
 ![](HEXO搭载安知鱼主题/file-20250320211534952.png)
+
 这样就可以比较灵活的配成你想要的样子，包括可以移动这些内容的位置，包括内容方块的样式、字体大小，图片大小都可以设置，这个文件位于`themes\anzhiyu\source\css\_page\about.styl`。
 ![](HEXO搭载安知鱼主题/file-20250320211709295.png)
 {% endnote %}
 
 # 看娘设置
+
 {% note default no-icon %}
 看娘就是在你的页面上加一个2d动漫人物，一般都是别人定义好的模型，直接拽过来用就可以，如果你想要自己想要的动漫人物模型需要去查看涉及`live2d`技术栈内容。
 [hexo适配的live2d](https://github.com/EYHN/hexo-helper-live2d)这个是一个GitHub项目，不过项目比较久远了，如果想用更新的模型可以用这个项目[支持操作项的live2D](https://github.com/stevenjoezhang/live2d-widget)项目比较新现在作者还在更新，支持点击交互发送消息等等，如果不喜欢的话可以去按照`live2D 看娘 Git项目`字条去搜索内容。
@@ -520,8 +571,10 @@ background: "#68b88e"
 ```shell
 npm install --save '模型的名称'
 ```
+
 安装完之后在你的`_config.yml`追加配置信息，[配置参数说明](https://l2dwidget.js.org/docs/class/src/index.js~L2Dwidget.html#instance-method-init)
 ![](HEXO搭载安知鱼主题/file-20250320213220960.png)
+
 我本人的配置信息就比较少，主要调整一个位置和大小，并且在移动端不显示，因为这个`live2D`不会根据你的窗口自适应缩放，这样在移动端看娘会占大部分的窗口看不到东西。配置完之后重启就可以查看。
 ```yml
 live2d:
@@ -545,25 +598,33 @@ live2d:
 ```
 
 <h1 id="amintion_conf">追番页设置</h1>
+
 {% note default no-icon %}
 追番这个不必多说，我想每个二次元都想展示自己的阅番战绩，我用的`Git`项目是[hexo插件结合B站和Bangumi](https://github.com/HCLonely/hexo-bilibili-bangumi)，项目有一个好处是不限制拉取的网站内容，有些番在B站没有，但是在Bangumi是有的，所以我这里选择的是Bangumi的数据源。不过这个前提是你必要要有一个番站记录地址，手动在网站配你自己看过的动漫番这样这个插件才会拉到你的内容。
 拉取流程是本地安装插件，配置你的番站账号唯一键在配置文件里，设置你要拉取的数据源网站，之后执行拉取命令，这样会在你的`HEXO`项目中的`_source\_data`出现一些页面内容和`json`文件都是你自己设置已经看过的番，之后部署就可以看到你的追番信息。
 ![](HEXO搭载安知鱼主题/file-20250320214207986.png)
 {% endnote %}
+
 登录[Bangumi](https://bgm.tv/anime)点击右上角的注册，注册一个账号。
 ![](HEXO搭载安知鱼主题/file-20250320214307065.png)
+
 搜索你看过，或者你正在看或者你想看的番名。这个支持降噪查询非常nice。
 ![](HEXO搭载安知鱼主题/file-20250320214656454.png)
+
 点击收藏，出现几个按钮想看、看过、在看，根据自己的需求选择。
 ![](HEXO搭载安知鱼主题/file-20250320214808382.png)
+
 这个记录评价就根据自己来看，总之就是要记录一个数据方便后面获取。
 ![](HEXO搭载安知鱼主题/file-20250320214846892.png)
+
 收录完你自己的动漫番数据，就回到你的项目安装插件。
 ```shell
 npm install hexo-bilibili-bangumi --save
 ```
+
 安装完之后去到你的`_config.yml`文件配置信息
 ![](HEXO搭载安知鱼主题/file-20250320215028102.png)
+
 以下是我本人的内容主要是定义数据源、定义名称，初始化展示的tab列表，还有我的bangumi账号id。
 - 记得`enable`启用状态要打开。
 - 修改`source`为`bgm`。
@@ -572,6 +633,7 @@ npm install hexo-bilibili-bangumi --save
 - `title`和`quote`在上面的文字展示
 - 至于`cinema`和`game`这两个是动漫电影和动漫游戏有需求的可以根据GitHub项目的描述设置。
 <font color="#ff0000">注意：`lazyload`这个配置一定要设置为`false`，因为涉及懒加载的问题。</font>
+
 ```yml
 # 追番插件
 # https://github.com/HCLonely/hexo-bilibili-bangumi
@@ -650,6 +712,7 @@ game: # 游戏设置，仅支持source: bgmv0
 
 获取你自己的bangumi的账号id，在bangumi页面开启`F12`输入一个`js`命令
 ![](HEXO搭载安知鱼主题/file-20250320215439007.png)
+
 我用第一个命令没生效，最后选择的最后一个获取id的方式，获取的id复制到配置文件中的`vmid`配置
 ```js
 //用户名
@@ -658,6 +721,7 @@ document.getElementById('header').getElementsByTagName('a')[0].getAttribute('hre
 CHOBITS_UID
 ```
 ![](HEXO搭载安知鱼主题/file-20250320215638467.png)
+
 配置完信息，执行拉取命令
 ```shell
 # 更新追番数据
@@ -669,9 +733,12 @@ hexo bangumi -d
 # 删除清空追剧数据
 hexo cinema -d
 ```
+
 ![](HEXO搭载安知鱼主题/file-20250320220631214.png)
+
 最后生成完数据可以去到自己的项目目录`source\_data`
 ![](HEXO搭载安知鱼主题/file-20250320220734221.png)
+
 最后在`_config.anzhiyu.yml`配置文件中把你的追番页打开，重启项目即可看到你的战绩。
 ![](HEXO搭载安知鱼主题/file-20250320220831894.png)
 # 全站搜索器
@@ -685,6 +752,7 @@ hexo cinema -d
 ```shell
 npm install hexo-generator-search --save
 ```
+
 安装成功之后前往`_config.anzhiyu.yml`配置文件，搜索`local_search`，设置`enable: true`，重启即可使用。
 ![](HEXO搭载安知鱼主题/file-20250320221350874.png)
 

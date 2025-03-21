@@ -15,7 +15,7 @@
               "state": {
                 "file": "技术/HEXO搭载安知鱼主题.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
               "title": "HEXO搭载安知鱼主题"
@@ -162,7 +162,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
