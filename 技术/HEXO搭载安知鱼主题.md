@@ -173,6 +173,10 @@ aside: false
 文本、图片地址、跳转地址都在配置文件修改`_config.anzhiyu.yml`，搜索`home_top`，修改`banner`配置。`immage`是图片地址，`link`点击图片跳转的地址。
 ![](HEXO搭载安知鱼主题/file-20250319154948047.png)
 
+{% note info no-icon %}
+这里涉及到抠图的功能，如果也和我一样想抠一下人物图的，可以看我这篇文章[Photoshop对图片中的人物做快速抠图](https://blog.freefunk.pp.ua/8986f1cd.html)，做快速抠图。
+{% endnote %}
+
 ## 文章卡片
 
 {% note primary no-icon %}

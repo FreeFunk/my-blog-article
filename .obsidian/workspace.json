@@ -27,15 +27,16 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技术/Obsidian文章同步部署博客项目.md",
+                "file": "技术/HEXO搭载安知鱼主题.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Obsidian文章同步部署博客项目"
+              "title": "HEXO搭载安知鱼主题"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -156,13 +157,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "设计/Photoshop对图片中的人物做快速抠图.md",
+                "file": "技术/HEXO搭载安知鱼主题.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Photoshop对图片中的人物做快速抠图 的大纲"
+              "title": "HEXO搭载安知鱼主题 的大纲"
             }
           },
           {
@@ -176,7 +177,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -194,14 +195,14 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "5e778d55b496e0cc",
+  "active": "d1b8a1da78cc4824",
   "lastOpenFiles": [
-    "技术/Obsidian文章同步部署博客项目.md",
     "设计/Photoshop对图片中的人物做快速抠图.md",
+    "技术/HEXO搭载安知鱼主题.md",
+    "技术/Obsidian文章同步部署博客项目.md",
     "设计/Photoshop对图片中的人物做快速抠图/file-20250322211013984.png",
     "设计/Photoshop对图片中的人物做快速抠图/file-20250322210815732.png",
     "设计/Photoshop对图片中的人物做快速抠图/file-20250322210617884.png",
-    "技术/HEXO搭载安知鱼主题.md",
     "设计/Photoshop对图片中的人物做快速抠图/file-20250322210114350.png",
     "设计/Photoshop对图片中的人物做快速抠图/file-20250322210042097.png",
     "设计/Photoshop对图片中的人物做快速抠图/file-20250322205959492.png",
