@@ -17,7 +17,7 @@ keywords:
   - PYTHON
 description: 通过COW项目接入DeepSeek的API，对接到微信公众号聊天平台，作为一个聊天BOT服务
 top_img: 
-cover: 
+cover: https://pic1.imgdb.cn/item/67de624c88c538a9b5c33d49.jpg
 copyright_author: FreeFunk
 copyright_author_href: https://blog.freefunk.pp.ua
 main_color: "#e1efe1"
@@ -259,9 +259,9 @@ sudo python3 app.py
 看到下面这些输出就是正常启动，启动有报错信息前往异常信息处理看看解决方案。
 ![](DeepSeek接入微信公众号/file-20250322144545741.png)
 
-### 异常信息处理
+## 异常信息处理
 
-#### Could not find a version that satisfies the requirement
+### Could not find a version that satisfies the requirement
 
 {% note default no-icon %}
 完整报错信息:
@@ -271,7 +271,7 @@ ERROR: No matching distribution found for openai==0.27.8
 ```
 这个问题是因为你的Python版本太低造成的，如果用默认的Python版本例如：2.x的版本就是会出现这个问题，所以建议用Python版本一定要用3.8版本。具体去到这篇文章的[安装Python标题](#python_title)。
 {% endnote %}
-#### Traceback (most recent call last)
+### Traceback (most recent call last)
 
 {% note default no-icon %}
 完整报错信息:
@@ -311,7 +311,7 @@ python3.8 -m pip install --user --upgrade setuptools wheel
 
 {% endnote %}
 
-#### urllib3 v2 only supports OpenSSL 1.1.1+
+### urllib3 v2 only supports OpenSSL 1.1.1+
 
 {% note default no-icon %}
 完整报错信息:
