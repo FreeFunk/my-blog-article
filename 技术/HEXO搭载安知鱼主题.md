@@ -1,7 +1,7 @@
 ---
 title: HEXO搭载安知鱼主题
 date: 2025-03-10 09:27:38
-updated: 2025-03-21 09:16:38
+updated: 2025-03-22 11:45:38
 categories: 技术
 tags:
   - HEXO
@@ -185,6 +185,41 @@ aside: false
 
 在同样配置文件下搜索`post_meta`，调整卡片的基本信息。
 ![](HEXO搭载安知鱼主题/file-20250319160129067.png)
+
+另外我这里对文章卡片的排序做了处理，因为排序默认按创建时间排序，如果你想要一些文章有优先级排在前面需要在文章的`Front-matter`追加`top`参数数字越大就越在前，不过这个方式我没有用，这需要安装插件。
+```shell
+# 需要卸载原来的index插件
+npm uninstall hexo-generator-index --save
+
+# 安装top插件
+npm install hexo-generator-index-pin-top --save
+```
+
+而我这边没有这方面的需求我只希望按更新时间排序，就只需要修改`node_modules`下的文件即可，文件路径`node_modules\hexo-generator-index\lib\generator.js`，注释掉第7行，新增一行`const posts = locals.posts.sort('-updated');`
+```js
+'use strict';
+
+const pagination = require('hexo-pagination');
+
+module.exports = function(locals) {
+  const config = this.config;
+  //const posts = locals.posts.sort(config.index_generator.order_by);
+  const posts = locals.posts.sort('-updated'); //新增
+  posts.data.sort((a, b) => (b.sticky || 0) - (a.sticky || 0));
+
+  const paginationDir = config.index_generator.pagination_dir || config.pagination_dir || 'page';
+  const path = config.index_generator.path || '';
+
+  return pagination(path, posts, {
+    perPage: config.index_generator.per_page,
+    layout: config.index_generator.layout || ['index', 'archive'],
+    format: paginationDir + '/%d/',
+    data: {
+      __index: true
+    }
+  });
+};
+```
 
 {% note danger no-icon %}
 需求留一下，就是在初始化没做这块卡片样式修改，会发现你的文章定义的描述`description`，在卡片上不显示。默认配置是给定一个展示的类型和文本长度。`method`是选定一段文本，分两种一个是直接取你的文章描述，一个是从你的文字内容开始，`length`是截取的文本长度。

@@ -1,7 +1,7 @@
 ---
 title: Obsidian文章同步部署博客项目
 date: 2025-03-21 09:31:12
-updated: 2025-03-22 00:00:12
+updated: 2025-03-22 11:39:12
 categories: 技术
 tags:
   - Obsidian
