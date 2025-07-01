@@ -1,7 +1,7 @@
 ---
 title: DeepSeek R1 本地大模型搭建
 date: 2025-03-23 12:43:59
-updated: 2025-03-25 10:00:59
+updated: 2025-07-01 15:20:59
 categories: 技术
 tags:
   - DeepSeek
@@ -20,7 +20,7 @@ keywords:
   - 内网穿透
 description: 利用DeepSeek官方提供的开源模型通过Ollama框架和腾讯云提供免费算力搭建一个本地大模型
 top_img: 
-cover: 
+cover: https://pic1.imgdb.cn/item/68638cd058cb8da5c882cb36.jpg
 copyright_author: FreeFunk
 copyright_author_href: https://blog.freefunk.pp.ua
 main_color: "#e1efe1"
