@@ -4,39 +4,24 @@
     "type": "split",
     "children": [
       {
-        "id": "316ff7119bc62440",
+        "id": "f864294b09bfd534",
         "type": "tabs",
         "children": [
           {
-            "id": "4192db982ad4492b",
+            "id": "94d36d16d8202081",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "设计/Photoshop对图片中的人物做快速抠图.md",
+                "file": "技术/DeepSeek R1 本地大模型搭建.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Photoshop对图片中的人物做快速抠图"
-            }
-          },
-          {
-            "id": "d1b8a1da78cc4824",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "技术/HEXO搭载安知鱼主题.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "HEXO搭载安知鱼主题"
+              "title": "DeepSeek R1 本地大模型搭建"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -157,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技术/HEXO搭载安知鱼主题.md",
+                "file": "技术/DeepSeek R1 本地大模型搭建.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "HEXO搭载安知鱼主题 的大纲"
+              "title": "DeepSeek R1 本地大模型搭建 的大纲"
             }
           },
           {
@@ -177,7 +162,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
@@ -195,25 +180,28 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "d1b8a1da78cc4824",
+  "active": "94d36d16d8202081",
   "lastOpenFiles": [
-    "设计/Photoshop对图片中的人物做快速抠图.md",
-    "技术/HEXO搭载安知鱼主题.md",
-    "技术/Obsidian文章同步部署博客项目.md",
-    "设计/Photoshop对图片中的人物做快速抠图/file-20250322211013984.png",
-    "设计/Photoshop对图片中的人物做快速抠图/file-20250322210815732.png",
-    "设计/Photoshop对图片中的人物做快速抠图/file-20250322210617884.png",
-    "设计/Photoshop对图片中的人物做快速抠图/file-20250322210114350.png",
-    "设计/Photoshop对图片中的人物做快速抠图/file-20250322210042097.png",
-    "设计/Photoshop对图片中的人物做快速抠图/file-20250322205959492.png",
-    "设计/Photoshop对图片中的人物做快速抠图/屏幕截图 2025-03-22 205646.png",
-    "设计/Photoshop对图片中的人物做快速抠图/file-20250322205828805.png",
-    "设计/Photoshop对图片中的人物做快速抠图/屏幕截图 2025-03-22 205544 1.png",
-    "设计/Photoshop对图片中的人物做快速抠图/屏幕截图 2025-03-22 205544.png",
-    "设计/Photoshop对图片中的人物做快速抠图",
+    "技术/DeepSeek R1 本地大模型搭建/file-20250701150506821.png",
+    "技术/DeepSeek R1 本地大模型搭建/file-20250701145622344.png",
     "技术/DeepSeek接入微信公众号.md",
-    "技术/DeepSeek接入微信公众号",
+    "技术/DeepSeek R1 本地大模型搭建/file-20250701145247334.png",
+    "技术/DeepSeek R1 本地大模型搭建/file-20250701145249961.png",
+    "技术/DeepSeek R1 本地大模型搭建.md",
+    "技术/DeepSeek R1 本地大模型搭建/file-20250701144520392.png",
+    "技术/DeepSeek R1 本地大模型搭建/file-20250701143043005.png",
+    "技术/DeepSeek R1 本地大模型搭建/file-20250325102802513.png",
+    "技术/DeepSeek R1 本地大模型搭建/file-20250325102559206.png",
+    "技术/DeepSeek R1 本地大模型搭建/file-20250325101401104.png",
+    "技术/DeepSeek R1 本地大模型搭建/file-20250325101334307.png",
+    "技术/DeepSeek R1 本地大模型搭建/file-20250325095930827.png",
+    "技术/DeepSeek R1 本地大模型搭建",
     "技术/搭建免费的个人博客网站.md",
+    "技术/Obsidian文章同步部署博客项目.md",
+    "技术/HEXO搭载安知鱼主题.md",
+    "设计/Photoshop对图片中的人物做快速抠图.md",
+    "设计/Photoshop对图片中的人物做快速抠图",
+    "技术/DeepSeek接入微信公众号",
     "技术/Obsidian文章同步部署博客项目",
     "技术/HEXO搭载安知鱼主题",
     "技术/java/未命名.md",
@@ -227,7 +215,6 @@
     "随笔",
     "设计",
     "技术",
-    "Template/hexo-post-init.js",
     "image/Pasted.md",
     "JAVA/SPRING/SPRING.md",
     "README.md",

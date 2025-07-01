@@ -7,10 +7,11 @@ tags:
   - Obsidian
   - HEXO
   - Git
-  - Git-Hook
+  - GitHooks
 keywords:
   - Obsidian
-  - Git-Hook
+  - Hooks
+  - GitHooks
 description: 使用Obsidian编写文章，联合Git做提交触发钩子机制，执行同步、HEXO打包部署、提交、Vercel部署一系列操作
 top_img: 
 cover: https://pic1.imgdb.cn/item/67dcc2fe88c538a9b5c23bd4.jpg

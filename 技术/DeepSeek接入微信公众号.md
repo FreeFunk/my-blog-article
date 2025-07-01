@@ -1,7 +1,7 @@
 ---
 title: DeepSeek接入微信公众号
 date: 2025-03-22 11:58:13
-updated: 2025-03-22 15:03:13
+updated: 2025-03-23 12:45:13
 categories: 技术
 tags:
   - DeepSeek
@@ -9,6 +9,7 @@ tags:
   - API
   - COW
   - PYTHON
+  - LINUX
 keywords:
   - DeepSeek
   - 微信公众号

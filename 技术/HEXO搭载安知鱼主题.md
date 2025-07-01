@@ -9,6 +9,8 @@ tags:
   - JS
 keywords:
   - 安知鱼
+  - HEXO
+  - JS
 description: 原生HEXO页面自定义配置主题，并且定制化调整样式
 top_img: 
 cover: https://pic1.imgdb.cn/item/67dcc2a088c538a9b5c23af8.jpg
