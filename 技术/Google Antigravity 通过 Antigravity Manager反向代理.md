@@ -1,5 +1,5 @@
 ---
-title: Google Antigravity 通过 Antigravity Manager反向代理
+title: Antigravity 通过 Antigravity Tools反向代理
 date: 2026-01-27 09:44:36
 updated: 2026-02-12 09:50:36
 categories: 技术
