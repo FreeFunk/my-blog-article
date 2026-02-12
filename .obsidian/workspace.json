@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "f864294b09bfd534",
+        "id": "2f0c4b17cf2cac4b",
         "type": "tabs",
         "children": [
           {
-            "id": "94d36d16d8202081",
+            "id": "c18f40d1f0cbe01e",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技术/DeepSeek R1 本地大模型搭建.md",
+                "file": "技术/Google Antigravity 通过 Antigravity Manager反向代理.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "DeepSeek R1 本地大模型搭建"
+              "title": "Google Antigravity 通过 Antigravity Manager反向代理"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技术/DeepSeek R1 本地大模型搭建.md",
+                "file": "技术/Google Antigravity 通过 Antigravity Manager反向代理.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "DeepSeek R1 本地大模型搭建 的大纲"
+              "title": "Google Antigravity 通过 Antigravity Manager反向代理 的大纲"
             }
           },
           {
@@ -170,6 +170,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "bases:新建数据库": false,
       "switcher:打开快速切换": false,
       "graph:查看关系图谱": false,
       "canvas:新建白板": false,
@@ -180,22 +181,26 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "94d36d16d8202081",
+  "active": "5e778d55b496e0cc",
   "lastOpenFiles": [
+    "技术/Google Antigravity 通过 Antigravity Manager反向代理/file-20260212094044538.png",
+    "技术/Google Antigravity 通过 Antigravity Manager反向代理/file-20260212093822420.png",
+    "技术/Google Antigravity 通过 Antigravity Manager反向代理/file-20260212093731469.png",
+    "技术/Google Antigravity 通过 Antigravity Manager反向代理/file-20260203094118324.png",
+    "技术/Google Antigravity 通过 Antigravity Manager反向代理/file-20260203093908184.png",
     "技术/Obsidian文章同步部署博客项目.md",
-    "技术/HEXO搭载安知鱼主题.md",
-    "技术/DeepSeek R1 本地大模型搭建.md",
-    "技术/DeepSeek R1 本地大模型搭建/file-20250701150506821.png",
-    "技术/DeepSeek R1 本地大模型搭建/file-20250701145622344.png",
+    "技术/Google Antigravity 通过 Antigravity Manager反向代理/file-20260202152025970.png",
+    "技术/Google Antigravity 通过 Antigravity Manager反向代理/file-20260202152016979.png",
+    "技术/Google Antigravity 通过 Antigravity Manager反向代理.md",
+    "技术/Google Antigravity 通过 Antigravity Manager反向代理/file-20260202144827148.png",
+    "技术/Google Antigravity 通过 Antigravity Manager反向代理/file-20260202115452952.png",
+    "技术/Google Antigravity 通过 Antigravity Manager反向代理/file-20260202115252715.png",
+    "技术/Google Antigravity 通过 Antigravity Manager反向代理/file-20260202110228575.png",
+    "技术/Google Antigravity 通过 Antigravity Manager反向代理",
     "技术/DeepSeek接入微信公众号.md",
-    "技术/DeepSeek R1 本地大模型搭建/file-20250701145247334.png",
-    "技术/DeepSeek R1 本地大模型搭建/file-20250701145249961.png",
-    "技术/DeepSeek R1 本地大模型搭建/file-20250701144520392.png",
-    "技术/DeepSeek R1 本地大模型搭建/file-20250701143043005.png",
-    "技术/DeepSeek R1 本地大模型搭建/file-20250325102802513.png",
-    "技术/DeepSeek R1 本地大模型搭建/file-20250325102559206.png",
-    "技术/DeepSeek R1 本地大模型搭建/file-20250325101401104.png",
-    "技术/DeepSeek R1 本地大模型搭建/file-20250325101334307.png",
+    "未命名",
+    "技术/DeepSeek R1 本地大模型搭建.md",
+    "技术/HEXO搭载安知鱼主题.md",
     "技术/DeepSeek R1 本地大模型搭建",
     "技术/搭建免费的个人博客网站.md",
     "设计/Photoshop对图片中的人物做快速抠图.md",
@@ -212,8 +217,6 @@
     "未命名.canvas",
     "obsidian/Obsidian同步Hexo部署.md",
     "随笔",
-    "设计",
-    "技术",
     "image/Pasted.md",
     "JAVA/SPRING/SPRING.md",
     "README.md",
